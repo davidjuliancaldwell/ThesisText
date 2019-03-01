@@ -1,0 +1,98 @@
+
+ 
+% ========== Chapter on Artifact Rejection
+ 
+\chapter {Aim 1.2: Algorithms to process neural data in context of ongoing stimulation}
+
+\section{Introduction}
+
+The interpretation of neural activity during concurrent electrical stimulation is a challenge. The stimulus artifact induced by electrical stimulation is often orders of magnitude greater than the neural signal of interest, confounding traditional neuroscience analytic techniques such as time-frequency analyses and event-related potential magnitudes \cite{Zhou2018}. How can we meaningfully interpret the neural response to stimulation during ongoing DCS? 
+
+Past approaches to dealing with the stimulus artifact problem have included template subtraction methods \cite{Hashimoto2002}.  Another employed locally fitting the recorded neural signals and subtracting the fit function for recordings from extracellular multielectrode array recordings on tissue slices \cite{Wagenaar2002}. For single pulse electrical stimulation, and the analysis of cortico-cortical evoked potentials \cite{Matsumoto2004b}, methods based off electrical modeling of the tissue-electrode interface to extract the physiological responses from artifacts have been implemented \cite{Trebaul2016}. 
+
+Filtering is another approach that has been used, but this runs into the issue of the overlap between the frequency spectra of the neural signal and that of the stimulus artifact, where subsequent filtering of frequency components of the artifact can induce distortions in the neural signal \cite{Nagel2000}. Recent progress has been made using a recursive Wiener filter to remove time domain artifacts in human electrocorticography recordings \cite{Mouthaan2016}. 
+
+Other groups have made software available for the analysis of neural signals with artifacts \cite{Erez2010, Herring2015}, but these from our experience tend to work on single trial, single pulse, or single channel bases. Additionally, SARGE, a generalized framework and MATLAB toolbox, by Erez et al., was developed in the context of tungsten microelectrode recordings from monkeys, and assumes saturation of an amplifier, yielding a period of non-usable signal. This presents an opportunity for analysis tools which process all channels simultaneously to allow for increased analytic throughput.
+
+Additional methods decompose the signals into various components through methods such as independent component analysis (ICA), principal components analysis (PCA), and variants of empirical mode decomposition (EMD). Other recent work has employed sequential principal components regression, using generated templates across channels and sequential non-linear regression to extract neural signals \cite{OShea2017}. Another approach applied to deep brain stimulator recordings is an ensemble empirical mode decomposition based approach \cite{Al-ani2011}. Independent component analysis techniques have been applied to cochlear auditory evoked potential recordings \cite{Gilley2006} and optic nerve stimulation and subsequent visual cortex reactions in rabbits \cite{Lu2012}.  Work to separate spikes from retinal stimulation in primates has used an algorithm based on a structured Gaussian process \cite{Mena2017}. 
+
+With all of the work previously done, one may wonder why additional post-hoc tools are needed. Front-end hardware approaches that completely eliminate the need for post-processing would be ideal \cite{Zhou2018}, but these do not yet work without the need for further processing. Therefore, post-hoc processing algorithms are still valuable. Additionally, many existing algorithms and approaches have not been optimized or tuned for electrocorticography recordings or simultaneous electrocorticographic and deep brain stimulator recordings. Oftentimes software is written to handle single channels, or small groups of channels. 
+
+We here discuss the implementation of software for amplifiers that do not saturate during stimulation, to allow for analysis of ongoing trains or single pulses of electrical stimulation, during multi-channel macro-scale human electrocorticographic recordings from human subjects. We implement a suite of approaches for comparison metrics, which may prove useful for researchers in other fields. Additionally, we present sets of considerations and assumptions under which certain approaches may or may not be applicable. Also, we implement algorithms which extract the stimulation onset timing from a single channel, and using the knowledge of volume conduction timing relative to neural signal propagation, extract windows of artifacts for all other channels automatically. We provide options to recover within stimulation pulse evoked potentials, to dynamically detect the offset of stimuli pulses on a channel and trial-wise basis. In this way, we seek to create software that scales to the 128 channels or greater that are becoming common in human neurophysiology research. 
+
+Also important is the presentation of various curated human electrophysiologic data sets. These are all simple matrices of samples x channels x trials data, which may serve as test data sets for others in the field who seek to develop and compare algorithms. This hopefully serves as a catalyst towards more open science and data sharing in human electrophysiology. 
+
+\section{Methods}
+By leveraging timing information on one channel, we are able to better detect and process signals on distant channels with smaller artifacts. We consider the recorded channel with the largest magnitude of artifact to be the channel to base the timing of all other artifacts off. 
+
+The first algorithms implemented were a simple linear interpolation scheme using the endpoints of the stimulus artifact onset and offset, and a shape-preserving piecewise cubic interpolation scheme using data points adjacent to the stimulus artifact. This has the disadvantage of discarding any high frequency content during this time period, which for trains of stimuli, can result in the loss of large amounts of information (Figure \ref{fig:exampInterp}). The next included an average across all individual stimulus pulses, which fails to capture individual variability in pulses and trials.  
+
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/artifactRejection/examp_trial_pchip_on_off}
+	\caption[Example of linear interpolation]{Demonstrated is a simple linear interpolation scheme, which eliminates any information about the neural signal present during the stimulus artifact period. }
+	\label{fig:exampInterp}
+\end{figure}
+
+
+\section{Template Extraction}
+
+In order to address issues with slight temporal offsets between artifacts on given trials based on our windowing, as well as different stimulus artifacts across trials, we implement a dictionary discovery approach to discover all possible families of artifacts in a given window. Using a variant of the DBSCAN algorithm for clustering  \cite{Ester:1996:DAD:3001460.3001507}, we employ three different possible distance metrics, including euclidean distance, cosine similarity, and correlation, to extract possible templates  (Figure \ref{fig:templates}). These can be specified by the user, and modification to the distances required for grouping as part of a cluster may be needed depending on the data set.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/artifactRejection/templateClusters_33_dictMethod}
+	\caption[Detected clusters for an example channel]{Example clusters on a given channel, across all trials. The thicker black lines represent the detected clusters, against which each individual artifact will be compared against and linearly subtracted from. }
+	\label{fig:templates}
+\end{figure}
+
+\section{Template Matching}
+
+Once a dictionary of templates has been discovered, we compare each detected artifact on each channel with the dictionary. The best matching artifact (correlation, euclidean distance, or cosine similarity) is subtracted linearly from the artifact, and the neural signal is recovered, allowing for further processing such as time-frequency analysis (Figures \ref{fig:693ffd_400ms_schematic}, \ref{fig:a1355e_priming_schematic}).
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.6\textwidth]{figures/artifactRejection/693ffd_400ms_schematic}
+	\caption[Processing pipeline and subsequent time-frequency analysis for an example channel]{In the top plot, the raw, averaged time series during a 400 ms period of stimulation is demonstrated. The average, post-processed signal is shown in the middle plot, upon which time-frequency analysis, as shown in the bottom figure, can be performed. }
+	\label{fig:693ffd_400ms_schematic}
+\end{figure}
+
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/artifactRejection/a1355e_priming_schematic}
+	\caption[Multiple electrode time series following stimulation extraction.]{This approach allows for the processing of many channels simultaneously. Demonstrated here are 10 example processed time series neural recordings, with the green box representing the duration during which the DCS was applied. 
+	}
+	\label{fig:a1355e_priming_schematic}
+\end{figure}
+
+In order to assess the performance of our algorithm, we also compare the spectral information across the trials to quantify the reduction in frequency content at the stimulation pulse frequencies, as well as maintenance of other spectral content of interest. We quantify the reduction in artifact by the reduction in RMS value as measured in decibels. There is a trade off between decibel reduction and the loss of meaningful signal, which requires user oversight. 
+
+\section{Discussion}
+
+We acknowledge that this approach is not appropriate for all instances of human electrophysiologic data. In particular, if a signal is relatively undersampled for short durations of stimuli, the performance of the algorithm will decrease to the point where the results are not satisfactory, and the neural activity recovered will. From our example data sets, our algorithm performed well with 12 kHz sampling, and poorly with 1.2 kHz sampling with pulse widths of 200 $ \mu s $. The use of upsampling is a future direction to explore for enhancing artifact rejection for slower sampling rates. 
+
+Furthermore, these recordings must be made on a system that does not saturate during stimulation, as if clipping occurs, this method will not be able to recover the underlying neural signals. 
+
+\section{Future Directions}
+
+We will create a synthetic data set in order to establish as best we can a ground truth scenario. To do this, we will take an experiment where we have both stimulus-free and DCS periods. Upon the DCS period, we will run our algorithm to extract known clusters of activity. We will then apply a random amount of jitter in both time and amplitude to create synthetic artifacts similar to the distributions shown in Figure \ref{fig:templates}, and add these back to the the stimulus free period of recording from the same subject. This is inspired by O’Shea et al, who created synthetic data sets for their algorithm for processing stimulation contaminated recordings from penetrating electrodes in primates \cite{OShea2017}. We will then perform our artifact rejection steps, and compare both the evoked responses and time-frequency responses to validate performance of our algorithm. 
+
+As additional validation, and to ensure that the high frequency band information relevant to human physiology (High gamma band, 70-200 Hz), is minimally affected by our algorithm, we will perform analysis of cortical responses using the Lomb-Scargle periodogram \cite{Muller2017}. Briefly, this algorithm involves the elimination of any parts of the signal with known artifacts, and allows for the estimation of the power spectrum during this now unevenly sampled signal. By comparing the mean power across the signal using both our algorithm and the Lomb-Scargle periodogram, we can assess the effect of our processing on the frequency content of our signals. 
+
+To see if we can gain any increased performance we will attempt an alternative approach of upsampling each artifact period, and extract the most likely artifactual signal using a variant principal component regression \cite{OShea2017}. We will only use local components that have the same biphasic orientation as the recorded pulse in each channel, to best ensure that we recreate the signal. 
+
+A potential alternative to pursue would be the implementation of a Dirichlet Process Mixture Model \cite{Teh2010, Teh2006}, in order to use a non-parametric model to cluster the data. 
+
+\section{Code Availability}
+
+Full MATLAB code and data sets are available at https://github.com/davidjuliancaldwell/artifactRejection 
+
+\section{Related Publications and presentations}
+
+\noindent Caldwell DJ, “Understanding the Neural Response to Direct Cortical Stimulation”, UW Data Science Summit, April 2018 \\ 
+\medskip
+
+\noindent Caldwell DJ, "Engineering direct cortical stimulation in humans", UW Neural Computation and Engineering Connection, January 2018 \\ 
+\medskip

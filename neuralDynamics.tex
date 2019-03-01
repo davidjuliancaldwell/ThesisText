@@ -1,0 +1,93 @@
+ 
+% ========== Chapter on Neural dynamics in response to stimulation of sensory cortex 
+ 
+\chapter {Aim 2.2: Comparisons between temporal dynamics and time frequency responses to haptic stimuli and DCS in somatosensory cortex}
+
+\section{Introduction}
+
+What is the neural signature of this difference that drives a slower response to DCS compared to haptic stimuli? Can waveforms be modified to reduce this delay? How can we better understand the cortical processing of DCS to S1?
+
+Based off of recent work using implanted depth electrodes in humans following median nerve stimulation and analysis in the broadband gamma range (50-150 Hz), which demonstrated rapid, phasic components in primary somatosensory cortex, as well as neighboring premotor, motor, and inferior parietal regions, as well as tonic components in opercular, insular, and parietal rostroventral and ventral medial-superior-temporal areas, a groundwork has been established for regions involved in processing of peripheral stimuli \cite{Avanzini2016,Avanzini2018}.
+
+In our tactile stimuli, we consider components of the ERPs that have been seen for other intracranially recordings for vibrotactile \cite{Wahnoun2015} and peripheral electrical  stimulation \cite{Meador2002}. These include early peaked components within 50-60 ms, as well as later ones between 100-300 ms later. Results from EEG studies from median nerve stimulation and mechanical pulses and vibration \cite{Kalogianni2018,hamalainen1990human} point to evoked potential latencies at 30, 50, and 100 ms following stimulation. We plan to analyze both ERP and broadband gamma responses, but recent work has demonstrated in sensory processing that ERP interpretation can be complicated by the complex shapes and waveforms of ERPs \cite{Miller2016}, so we would anticipate that ERPs may be less consistent across subjects than the broadband gamma responses. Similarly, recent work has demonstrated both DCS of S1 cortex and light touch evokes neural activity primarily in the broadband gamma region \cite{Muller2017}.
+
+Additionally, we hypothesize that the evoked potential size following stimuli would be a function of the oscillatory phase of the alpha power (8-12 Hz), which is thought to participate as a gating and attention mechanism \cite{Ai2014}. An additional line of inquiry will be phase amplitude metrics such as event related phase amplitude coupling \cite{Voytek2013}, to look for the influence of longer range oscillatory cycles such as theta oscillations (4-8 Hz) on the high gamma power. 
+
+We hypothesize that similar mechanisms in terms of local neuronal activity (broadband gamma activity) adjacent to sensory electrodes will exist between the two conditions, but that additional regions involved in processing natural haptic stimuli such as somatosensory association cortex and the supramarginal gyrus will have significantly decreased responses in the DCS conditions relative to the haptic stimuli. 
+
+To address engineering stimulation for enhanced neuroprosthetic performance, with faster reaction times and more natural sensations, we hypothesize better mimicking the cortical response in S1 to picking up an object, with onset of touch being marked by a burst of activity in S1, with a tonic, lower level of stimulation while maintaining contact, would result in faster reaction times, and perhaps more natural percepts \cite{Tabot2013,Bensmaia2015}.
+
+\section{Experimental overview}
+6 subjects with response timing data have been collected as described in Aim 2.1, upon which we will perform our neural and behavioral analyses. 
+
+For the response timing experiments and waveform modifications, we carry out the procedure as demonstrated in Aim 2.1 with additional modifications on the waveform. Rather than using trains of constant amplitude as in Aim 2.1, we add initial high “priming” pulses on the waveform (Figure \ref{fig:waveformModOverview}) to better mimic S1 responses to object contact. 
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/waveformMod/primingSchematic}
+	\caption[Experimental overview of modifications to waveforms to test reaction times]{Waveforms with amplitude variation throughout are compared to waveforms with constant amplitude, with both perceptual reports and response times as output metrics.}
+	\label{fig:waveformModOverview}
+\end{figure}
+
+\section{Analysis}
+
+Following processing by the methods presented in Aim 1.2, we extract the periods of time (epochs) of the signal centered on the time of stimulus onset for both the haptic and DCS conditions. We extract a window with one second before, and two seconds after stimulus onset. For time-frequency analyses, we perform the continuous wavelet transform with a non-analytic Morlet wavelet to extract the power over frequency bands from 1-300 Hz during the time course of signal. Due to the 1/f power distribution in neural signals, as well as to account for baseline activity, we normalize each trial to the mean and standard deviation of the power in each frequency bin before stimulus onset. Both time frequency and time series analyses are performed on averaged epochs across trials. For broadband high gamma responses, we calculate the amplitude of the envelope of the Hilbert transformed analytic signal of the bandpassed, 70-200 Hz signal, to get an estimate of broadband gamma power. We will additionally compare these results to the average power across these frequency bins from the wavelet transform, although we expect similar results \cite{Bruns2004,VanQuyen2001}.
+
+\section{Existing results: neural analysis}
+
+As shown in figures \ref{fig:693ffd_temporal} and \ref{fig:693ffd_timeFreq}, demonstrating example analyses of event related potentials (ERPs) and time frequency data, we observe similar responses between an electrode immediately surrounding the stimulation pair of electrodes (electrode 28, green box), with different responses present in the haptic condition (blue boxes) in somatosensory association areas. This suggests that there are regions of cortex that are utilized for processing and responding to natural, haptic stimuli that are absent in the cortical stimulation condition. 
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/neuralDynamics/693ffd_timeFreq_compare}
+	\caption[Time series evoked potentials comparing haptic and DCS conditions. ]{Example analysis highlighting the similarities and differences in the time domain ERPs from both haptic and DCS conditions. Pink electrodes represent the S1 area which was stimulated with DCS, eliciting a spatially similar percept to the haptic condition. In electrodes immediately adjacent to the stimulation electrodes, we observe similar evoked responses in a number of electrodes with (negative deflection), with an increased latency.}
+	\label{fig:693ffd_temporal}
+\end{figure}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/neuralDynamics/693ffd_timeFreq_compare_wavelet}
+	\caption[Example analysis highlighting the similarities and differences in the time and frequency domain from both haptic and DCS conditions.]{Pink electrodes represent the S1 area which was stimulated with DCS, eliciting a spatially similar percept to the haptic condition. In one of the electrodes immediately adjacent to the stimulation electrodes (28), we observe similar high gamma responses to DCS and haptic conditions. In electrodes covering somatosensory association areas and the supramarginal gyrus (blue box, left side), there are robust haptic responses that are absent in DCS conditions. }
+	\label{fig:693ffd_timeFreq}
+\end{figure}
+
+\section{Existing results: modified waveform behavioral analysis}
+
+In the first subject analyzed thus far, there is a trend towards faster reaction times with the initial two high pulses (median response times of 417 ms for the modified DCS train, vs 473 ms for the constant stimulus train condition), however, this is not significant as assessed through a Kruskal-Wallis test (Figure \ref{fig:primingResults1}). 
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.4\textwidth]{figures/waveformMod/a1355e_priming_RT}
+	\caption[Modified waveform - first subject]{The DCS train with two leading pulses has a trend towards faster reaction times than the constant DCS train}
+	\label{fig:primingResults1}
+\end{figure}
+
+In a second subject, we tested various constant 200 ms train amplitudes (1.25 mA, 3 mA, and 0.8 mA), as well as waveforms with 2 initial high pulses at 3 mA, followed by 38 pulses at a lower frequency. The 200 ms, 3 mA train was reported to feel very intense, whereas the 2 high pulse trains were not reported as so. Anecdotally, this subject also reported the 2 pulses at 3 mA as more “natural” than the longer, constant train stimuli. The two DCS conditions in block 2 were significantly different from one another (Kruskal-Wallis test), pointing to the fact that two initial high pulses may aid with perception without creating an overly strong stimulus (Figure \ref{fig:primingResults2}). 
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/waveformMod/3ada8b_priming_RT}
+	\caption[Modified waveform - second subject]{The haptic feedback condition has a lower median response time than all other conditions. None of the off-target, null, or 800 $ \mu A$ conditions were responded to within our response timing bounds}
+	\label{fig:primingResults2}
+\end{figure}
+
+The time series results (Figure \ref{fig:tsPriming}) for the first subject with the initial high pulses demonstrates a more robust evoked potential during the stimulation train relative to the constant condition, despite no reports of substantially increased strength of stimuli. 
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/neuralDynamics/primingNeural_data_a1355e_timSeries}
+	\caption[Time series differences between trains with and without leading high pulses following artifact processing. ]{Time series differences between trains with and without leading high pulses following artifact processing. The green window indicates the time during which the stimulation artifact has been processed out. Of note is the much larger evoked responses in the highlighted time periods.}
+	\label{fig:tsPriming}
+\end{figure}
+
+\section{Future analysis and expected results}
+
+In order to better assess and evaluate the significance of the differences between the time series and spectrotemporal data, we will perform permutation testing of both the ERP and time-frequency maps \cite{Maris2007,Maris2012}. Briefly, we will perform a permutation test on the peak latency and amplitude of the early and late ERP responses if present for the time series data, and a cluster based method on the time frequency maps. We expect to see gamma band responses present in somatosensory association areas and other high level processing areas for the haptic stimuli that are not present for the DCS stimuli. 
+
+Further, we will group electrodes by anatomical Brodmann area in each of the subjects to better discriminate the consistent responses to both haptic and DCS conditions. This will allow for a combination of the electrode coverages from the various subjects, to better discern the spatial and temporal patterns of activity in both conditions. 
+
+We will continue collecting data on the modified stimulus waveform trains, and include charge balanced conditions, as somatosensory cortex may be most sensitive to differences in charge (discussions with David Bjanes, Jeneva Cronin). 
+
+\section{Related publications and presentations}
+
+\noindent Caldwell DJ, “Behavioral and neural differences between haptic stimulation and direct cortical stimulation in humans: implications for neuroprosthetics”, 7th International BCI Meeting, Workshop: Perception of Sensation Restored through Neural Interfaces, Asilomar, CA, May 2018

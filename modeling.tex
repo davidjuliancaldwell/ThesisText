@@ -1,0 +1,81 @@
+
+ 
+% ========== Chapter on Modeling
+ 
+\chapter {Aim 1.1: Creation of interpretable, analytic models that explain the resistivity of various cortical layers}
+
+\section{Introduction}
+
+To effectively engineer DCS, we need to understand how the electric current flows through the brain. Current flow is controlled both by the anatomy and by the associated electrical resistivity $ \rho $ of three components: (1) the cerebrospinal fluid (CSF), (2) gray matter, and (3) white matter (Figure \ref{fig:modelingOverview}). Knowing the effective resistivity of the different cortical layers, and how the currents spread is important for targeting electrical stimulation to different brain regions and for calculating the neural response to DCS. It is also required for accurate EEG and MEG modeling and for understanding local field potential (LFP) propagation. 
+
+Given its widespread importance, we were surprised to find the huge reported spread in the literature for previously measured resistivity values for CSF, gray matter, and white matter (Figure \ref{fig:apparentResist}).  Why is the variability so large? We have identified two reasons. First, most previous measurements employed a 2-point method, which actually measured the contact resistance $ \rho_{c} $which is a property of the contacts in series with the brain, instead of the sheet resistance which is a property of the layered structure of the brain. We show our contact resistance measurements in Figure \ref{fig:apparentResist}. Note that our values are consistent with the large reported values for gray and white matter in the literature. Second, for layered systems, all of the layers must be included. This was neglected previously. 
+
+\section{Methods}
+
+The standard method is to use 4-point measurements \cite{Miccoli2015}.  We made multipoint measurements using clinical electrocorticography (ECoG) grids in 8 humans by stimulating between a pair of electrodes using biphasic, bipolar, constant-current pulses, while recording the voltages across all the non-stimulating electrodes. 
+
+When a system consists of multiple layers with different resistivity values, the measured resistivity can be expressed as an apparent resistivity with depends on the thickness of the layers, on their resistivity, and on the location of the electrodes. This has been extensively studied for semiconductor characterization and for geoelectrical prospecting, but to our knowledge it has never been applied to resistivity measurements of the human cortex. 
+
+For our analytic models and to calculate the resistivity from the measured voltages, we implement a simple dipole model for constant current point electrodes on the surface of a half space, as shown in Equation \ref{eq:apparentResOne}. The left side of the equation represents the measured voltages at all recording electrodes in our array, while $ r_{+/-} $ represents the Euclidean distance to the positive and negative pole electrode respectively. We use linear regression to pick the optimal resistivity value, $ \rho $, to fit the data. $ \rho $  is the apparent resistivity, and $ I $ is the current.
+
+\begin{equation}
+V(r) = ( \frac{\rho \  i_0 } { 2 \pi}) [ \frac{1}{ r_+} -  \frac{1}{ r_-} ] \label{eq:apparentResOne}
+\end{equation}
+
+We compare this against measurements including the contact resistance often reported in the literature. To calculate the contact resistance for our circular electrodes, where the distance between the electrodes is greater than the radii of an electrode contact (equation \ref{eq:rContact1}), allowing for simplified calculations (\cite{Kristiansson2005a}), we used the following equation to calculate the resistance, where the voltage (V) is the initial linear jump measured, and the current (I) is what was set by our constant current stimulator (equations \ref{eq:rContact2},\ref{eq:rContact3}). 
+
+\begin{align}
+ R = [1 - (\frac{2}{ \pi} ) \arcsin(\frac{a}{d}) ]  \frac{\rho}{2a}  \approx A \ \frac{\rho}{2a} \label{eq:rContact1} \\
+\rho = {2 a R \over A} \ \ \ \label{eq:rContact2} \\
+V = IR  \label{eq:rContact3}
+\end{align}
+
+To accurately measure the voltages at all recording electrodes, we combine long stimulation pulse times (1.2 ms per phase), with a high sampling rate (12 kHz). We are then able to distinctly identify and extract the time periods where there are minimal edge transients and the electrode voltage has settled to a stable value (Figure \ref{fig:modelingOverview}).
+
+\section{Existing results}
+We fit our data using a simple apparent resistivity $ \rho_a $ model. For our first seven subjects, we stimulated electrodes 1 cm apart and measured the voltages at 62 locations. We found the mean apparent resistivity to be 0.76 with a standard deviation of 0.13 ohm-m. For an example of the measured data, and subsequent model fit, see Figure \ref{fig:exampOneLayerFit}. For our eighth subject, we stimulated electrodes 1, 3, and 5 cm apart and measured the voltages at 30 locations. We found the mean apparent resistivity to be 0.72 with a standard deviation of 0.07 ohm-m. Our results demonstrate the importance of correctly modeling all three components together in order to determine the true resistivity of each one. They also show the utility of multipoint measurements. This initial work on the effects of CSF thickness and the resistivity of each layer of the brain, will allow us to develop better, and more-targeted stimulation techniques informed by improved models.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/modeling/modeling_overview}
+	\caption[What is the resistance of the human brain?]{Electrical stimulation of cortex results in charge injection which flows between a source and a sink electrode. In the case of bipolar electrodes, the majority of current flows between the two electrodes. The equipotential lines represent curves along which the electric potential is the same. Using other electrodes in the array, we are able to measure the electric potentials relative to a distant reference electrode.  Beyond a simple one layer model we can consider that the cortex consists of a layer of cerebrospinal fluid of some thickness, under which layers of white and gray matter reside. The stimulation currents pass between the two electrodes, and depending on their separation and the topography of the cortex, a varying amount of current may pass through different regions of cortex. }
+	\label{fig:modelingOverview}
+\end{figure}
+
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/modeling/composite_plot_subplots_v4}
+	\caption[Calculated apparent and contact resistivites and the literature]{Comparison of our apparent and contact resistivities with values reported in the literature. $ \rho_a $ indicates the apparent resistivity, while $ \rho_c $ indicates the contact resistivity. }
+	\label{fig:apparentResist}
+\end{figure}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/modeling/subject1_fit}
+	\caption[Example one layer fit]{Illustration of the fits of the simple analytic model to the measured data for a single subject. 
+	}
+	\label{fig:exampOneLayerFit}
+\end{figure}
+
+\section{Future analyses and directions}
+
+We have collected and curated 8 ECoG data sets which are being analyzed using analytic techniques. We are aligning all of the patient data in a common reference frame, to allow for across subject comparisons with the same position and orientation of the dipole. This analysis will allow us to both see how analytic models fit individually, as well as generalize across subjects. 
+
+We are continuing to collect data sets with various electrode spacings, both to further validate the analytic model, as well as to compare our results with the FEM results of our collaborators at the University of Utah (PI Rob Macleod, PI Chuck Dorval) and University of Northeastern (PI Dana Brooks). Our collaborators are able to create patient specific MRI and electrode reconstructions, as well as perform forward modeling to predict how applied current at known electrodes will propagate through cortex. This provides a complementary state-of-the-art method to understand the acquired data and validate the analytic approaches
+
+We have begun collecting intraoperative DBS patient data as well with Dr. Andrew Ko, with localization of the electrodes both by imaging and SSEPs. We therefore with relative certainty, compared to the weeklong ECoG implant where electrode shift may occur, know the location of the electrodes relative to sulci and other anatomic features. This along with the deeper DBS recordings opens an opportunity to extend our models beyond simple surface geometry. Surface and depth stimulation with both surface and depth recording offers a rare, important opportunity to understand not just the 2D planar surface of the brain, but also the propagation at deeper locations. 
+
+The results highlighted above use a single layer apparent resistivity model, but the brain consists of 3 distinct layers. Using circular electrode analytic 3 layer models (Schumman 1969), and parameter space exploration on the Hyak super-computing cluster on campus, we will test various parameters, such as the thickness and resistivites of the different layers. This is an advantage of our analytic models relative to FEM models, as by visualizing and exploring the parameter space of possible values, we can see which models may make the best sense with our data. Additionally, comparisons between models with point electrodes, as done above, will be compared against finite sized circular electrodes to see the influence of each. We expect on our size scales to see similar results from point electrode, constant current, and constant voltage finite sized electrodes. Additionally, we expect to obtain thicknesses of cortical layers and resistivities that fall within the wide range of values reported in the literature. 
+
+Another element of the future work will include a careful characterization of the ad-tech clinical grids in a saline solution of a known conductivity. By characterizing the performance of our electrode grids in a known solution and geometry, we will better understand our analyses of the neural stimulation data. Specifically, we will learn better how to interpret the different slopes present on the stimulation waveforms recorded (Figure \ref{fig:modelingOverview}), which could reveal information about electrode-tissue resistance and capacitance. Further, we plan to publish the code and data along with our analyses, to allow for further exploration and verification by other research groups. 
+
+\section{Related publications and presentations}
+
+\noindent Caldwell DJ, Cronin JA, Rao RPN, Ko AL, Ojemann JG, Sorensen LB, “What is the resistivity of the human brain? Insights from direct electrical stimulation, electrocorticographic recordings of the human cortex, and analytic models”, BMC Neuroscience 2018, CNS 2018 \\
+\medskip
+
+\noindent Caldwell DJ, Cronin JA, Rao RPN, Ko AL, Ojemann JG, Sorensen LB, “What is the resistivity of the human brain? Insights from direct electrical stimulation, electrocorticographic recordings of the human cortex, and analytic models”, Computational Neuroscience Meeting 2018, Seattle, WA, July 2018 \\
+\medskip
+
+

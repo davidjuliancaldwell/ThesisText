@@ -1,0 +1,114 @@
+
+\setcounter{tocdepth}{1}  % Print the chapter and sections to the toc
+
+
+\prelimpages
+ 
+%
+% ----- copyright and title pages
+%
+\Title{Engineering Direct Electrical Stimulation of Human Sensorimotor Cortex}
+\Author{David Caldwell}
+\Year{2019}
+\Program{Bioengineering}
+
+\Chair{Jeffrey G. Ojemann}{Professor}{Neurological Surgery}
+\Chair{Rajesh P.N. Rao}{Professor}{Computer Science and Engineering
+}
+\Signature{Azadeh Yazdan-Shahmorad}
+
+
+\copyrightpage
+
+\titlepage  
+
+ 
+%
+% ----- signature and quoteslip are gone
+%
+
+%
+% ----- abstract
+%
+
+
+\setcounter{page}{-1}
+\abstract{%
+Damage to the nervous system due to stroke, spinal cord injury, and limb loss leads to significant sensory and motor deficits. Despite the variety of reasons behind cortical injury, targeted direct electrical stimulation (DES) may be able to help restore both motor and sensory function in future neuroprosthetic applications. Despite progress in non-human models of DCS, the application of DES in humans is not well characterized or understood. A number of fundamental barriers need to be addressed through a principled engineering approach before true translation of DES in humans can be achieved. First, the modeling of how electrical stimulation propagates through the tissue, and subsequently how to extract neural dynamics in the context of direct cortical stimulation is not well understood. Second, the understanding of the human response to DES, and the ongoing neural dynamics during behavior, have not been directly compared to natural feedback. Third, various stimulation protocols for sensorimotor cortex to induce plasticity have not been validated with DES in humans. My dissertation seeks to address these three issues through the lens of engineered stimulation of sensorimotor cortex in humans with implanted electrodes, to move DES closer towards clinical rehabilitation use. 
+}
+ 
+%
+% ----- contents & etc.
+%
+\tableofcontents
+\listoffigures
+\listoftables  
+ 
+%
+% ----- glossary 
+%
+\chapter*{Glossary}      % starred form omits the `chapter x'
+\addcontentsline{toc}{chapter}{Glossary}
+\thispagestyle{plain}
+%
+\begin{glossary}
+\item[ECoG] Electrocorticography. This refers to electrodes implanted subdurally, epidurally, or in deeper gray or whiter matter structures (depth electrodes), but in this thesis, all references refer to either subdural or depth electrodes. 
+\item[DBS] Deep Brain Stimulation. 
+\item[EEG] Electroencephalography. This refers to the placement of electrodes on the scalp. 
+\item[LFP] Local field potential. These are the composite signal from multiple neurons firing.
+\item[DES] Direct electrical stimulation. In this thesis, this refers to stimulation of any region of the brain, cortically or subcortically, through implanted electrodes.
+\item[DCS] Direct cortical stimulation. This refers to the electrical stimulation of the cortex through implanted electrodes. 
+\item[DECS] Direct electrical cortical stimulation. In this thesis, this is synonymous with DCS.
+\item[CSF] Cerebrospinal fluid - clear fluid which provides cushioning, waste removal, and distribution of materials throughout the brain
+\item[Dura] The outermost layer covering the brain and spinal cord. Subdural electrodes are implanted beneath the dura, and above the arachnoid and pia
+\item[Craniotomy] Surgical procedure in which bone is removed from the skull temporarily to gain access to the brain
+\item[Epilepsy] A disorder described by recurrent unprovoked seizures
+\item[DBS] Deep brain stimulation: a treatment using electrical stimulation to treat movement disorders (Parkinson's, Essential Tremor), and increasingly psychiatric disorders
+\item[FEM] Finite element modeling. The use of a discretized mesh representing a surface, and the forward modeling of partial differential equations of interest (e.g. Laplace’s equation for electrostatics)
+\item[Contact resistance] Total resistance of the electrode, electrode tissue interface, CSF, and brain 
+\item[Sheet resistance] Intrinsic resistance of the material of interest 
+\item[EP] Evoked potential. The cortical response due to DCS, which is the recorded complex activity resulting from the superposition of numerous neuronal elements. 
+\item[EMG] Electromyography. The electrical recording of muscle activity
+\item[SSEP] Somatosensory evoked potential. The signal in cortex following peripheral median nerve stimulation. 
+\item[MEP] Motor evoked potential. A robust EMG in a peripheral muscle that occurs following DCS of motor cortex regions. 
+\item[DBSCAN] A density based clustering algorithm 
+\item[Unsupervised clustering] A machine learning method which discovers structure in the data without predefined user guidance. 
+\item[Cathodal stimulation] Electrical stimulation which causes electrons and negative ions to gather at the electrode, causing depolarization directly beneath the electrode
+\item[Anodal stimulation] Electrical stimulation which causes positive species to gather at the electrode, causing hyperpolarization directly beneath the electrode. 
+\item[NMDA receptor] Receptor which binds NMDA, also functions as an ion channel, and is important for cellular plasticity. 
+\item[fMRI] Functional magnetic resonance imaging. An non-invasive imaging method which allows for the indirect measurement of neuronal activity at a high spatial but low temporal resolution
+\item[BOLD] Blood oxygen level dependent: The signal measured by fMRI, where decreases in blood oxygen locally correlate with neuronal activity. 
+
+
+
+ 
+\end{glossary}
+ 
+%
+% ----- acknowledgments
+%
+\acknowledgments{% \vskip2pc
+  % {\narrower\noindent
+ The author first and foremost appreciates the selfless generosity of our research participants, without whom this research would never be possible. The author also wishes to express sincere appreciation to 
+  his committee members Dr. Jeffrey Ojemann, Dr. Rajesh Rao, Dr. Azadeh Yazdan-Shahmorad, Dr. Bingni Brunton, and Dr. Eric Chudler. 
+  
+  He would also like to thank all members of the GRID and Neural Systems laboratories, who have guided and shaped the research presented here. The long and incomplete list includes Dr. Kurt Weaver, Dr. Larry Sorensen, Dr. Jeneva Cronin, Dr. Jing Wu, Dr. Kaitlyn Casimo, Nile Wilson, Courtnie Paschall, Alainna Brown, Dr. Jared Olson, and Dr. Jeremiah Wander.
+  
+  Additional members not in the lab who have provided valuable feedback and guidance include Dr. Eberhardt Fetz, Dr. Stavros Zanos, Dr. Steve Perlmutter. Collaborators near and far have included Dr. Tonio Ball and Alexis Gkogkidis at the University of Freiburg, Dr. Dana Brooks, Kimia Shayestehfard, and Sumientra Rampersad at Northeastern University, and Dr. Rob Macleod, Dr. Chuck Dorval, Chantel Cherlebois, and Dr. Moritz Dannhauer at the University of Utah.
+  
+  The authour would also like to thank his funding sources, which have included the the National Science Foundation (NSF) Center for Neurotechnology (CSNT) (Award Number EEC-1028725), collaborative work through NSF Award Number IIS-1514790, the Big Data for Genomics \& Neuroscience Training Grant under Grant Number 1T32CA206089-01A1, the ARCS Foundation, and a graduate fellowship through the University of Washington Institute for Neuroengineering (UWIN).
+  % \par}
+}
+
+%
+% ----- dedication
+%
+\dedication{\begin{center}I dedicate this thesis foremost to all of those that have helped him along the way, as well as the patients who were so willing to participate in research. Without them none of this would be possible.
+		
+My friends in both the MD and PhD phases of training have provided critical support and friendship, without which this would have been a more longer journey. My family has always supported and encouraged my interests and endeavours, for which I am eternally grateful. My fiancee and future wife has always stood by me during my training.  \end{center}}
+
+%
+% end of the preliminary pages
+ 
+ 
+ 

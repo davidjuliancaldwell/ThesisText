@@ -1,0 +1,149 @@
+
+% ========== Synopsis
+ 
+\chapter {Abstract}
+
+\section{Abbreviated introduction and plan}
+
+
+My dissertation is focused on engineering direct cortical stimulation (DCS) in humans implanted with electrocorticography (ECoG) and deep brain stimulation (DBS) electrodes. Specifically, my work aims to understand the spread of DCS through cortex for future targeting and modeling of DCS (Aim 1), to develop algorithms and share human stimulation data sets (Aim 1), to characterize the behavioral and cortical response to DCS relative and in addition to natural peripheral feedback (Aim 2), and to investigate the ability to enhance neural plasticity through DCS (Aim 3). Through a comprehensive understanding of both the physical, neural, and behavioral effects of stimulation, we can better engineer devices to treat disorders of the nervous system and restore lost function. 
+
+
+\section{Aims overview}
+
+
+\subsection{Aim 1: Modeling cortical stimulation and interpreting its effects on neural dynamics}
+
+
+In this aim, we aim to better understand the resistivities of different cortical layers to inform future modeling approaches, to compare finite element method (FEM) models to analytic models, as well as to use principled mathematical techniques to extract neural activity in the context of stimulation. The first element of engineering electrical stimulation in humans is to understand where the applied currents flow. The subsequent step is to disentangle the neural response to this stimulation from the ongoing physical propagation of the stimulation. Prior efforts have successfully created patient specific models and sophisticated FEM \cite{Kim2015}, as well as demonstrated methods that putatively extract the neural data during stimulation. However, numerous fundamental, core elements of cortical stimulation critical to effective model development, including a precise characterization of charge transmission through the brain, still require substantial exploration. Further, there is no clear consensus, nor clearly documented and published code and data, on the best method for extracting the neural response to cortical stimulation \cite{Zhou2018}. What are the simple, core elements of cortical stimulation that we can model and understand to gain intuition into how neural stimulation propagates through cortex? How can we develop algorithms to extract the neural response to cortical stimulation?
+
+\subsubsection{Aim 1.1: Creation of interpretable, analytic models that explain the resistivity of various cortical layers}
+
+The first part of this aim was to see how a one-layer apparent resistivity model would fit our data, working along with Larry Sorensen at the University of Washington and collaborators at the University of Utah, Northeastern University, and University of Freiburg. We found that across 8 subjects, a one-layer model inspired by work in geophysics and the semiconductor industry \cite{Miccoli2015} reliably fit our data and suggested that many of the published values for the resistivities of grey, white, and cerebrospinal fluid (CSF) may be incorrect. A one-layer, apparent resistivity model captures all of the variability in different layers as a single value. The correct modeling of cortical stimulation, and accurate resistivity values for different cortical layers is necessary not only for targeted DCS, but also for source modeling and understanding how the signals we record on the surface are affected by the layers surrounding the neurons generating our observed signals. 
+
+Future work will involve extending our work to a circular electrode, 3-layer analytic model \cite{Schumann1969a} to understand the potential contributions of the different thicknesses and resistivities of cortical layers (CSF, gray, and white matter) and finite-sized electrodes. Through this, we will established physiologically relevant parameters of layer thickness and resistivities that best fit experimentally acquired data across subjects. We developed algorithms to better extract and quantify the steady state voltage during stimulation, which we will use to better calculate the apparent resistivity in the lower signal to noise parts of our data. We will align all of our data on a common grid to average across subjects and minimize variability due to any single subject.  
+
+An additional avenue will be careful characterization of the clinical ECoG grids and DBS electrodes in a saline solution to better understand and model our stimulation. By analyzing the applied stimulation curves and subsequent electrical measurements on other channels, we can extract information about the capacitance and resistance of the electrode-tissue interface, as well as the resistance of the tissue. We can further compare our results to those of our collaborators at the University of Utah and Northeastern University who are developing patient-specific finite element models, in order to better understand the impact of patient specific geometry. 
+
+
+\subsubsection{Aim 1.2: Extraction of neural signals during concurrent DCS, and open source software and data to aid replication}
+
+
+This work is aimed at extracting the underlying neural activity and neural responses to DCS from electrical artifacts, with Bingni Brunton and Nathan Kutz. The measured voltages in Aim 1.2, which are our signal of interest for understanding the spread of current through the cortex, are often three orders of magnitude greater than the underlying neural activity of interest. 
+
+We are developing methods that perform better than the commonly used simple linear interpolation and channel-wise averaging \cite{Zhou2018}, and offer speedups relative to methods that require signal realignment and tissue electrode interface modeling. Currently, we create a dictionary of potential stimulation artifact templates for each channel across all measured trials, against which the best matching artifact for any given stimulation pulse can be removed. In this way, we seek to account for variable stimulation magnitudes that can arise during stimulation. Following stimulation, we quantify the reduction in artifact as the root mean square (RMS) decrease in average signal amplitude during a trial, as well as the reduction in power at the stimulation frequencies, along with maintenance of the physiologic frequencies of interest. 
+
+Future validation will include explorations of stimulation parameters under which this method may be applicable, including sampling rates, relative pulse widths, and recording modalities (DBS, ECoG). Further, a synthetic data set using clustered artifact templates will be generated and tested against to best validate our method. To assess the preservation of power in frequency bands of interest, we will further use techniques such as the Lomb-Scargle periodogram \cite{Muller2017} to estimate the average power in different frequencies across trials, and quantify the difference in average power between pre- and post-processed trials. In order to assess cluster viability, we plan to quantify the within cluster distances and between cluster distances to establish if meaningful clusters are extracted. Additionally, we plan to take sections (folds) of the data, and test the performance of the algorithm on individual folds. We will take artifacts that were not part of the clusters, and see how well they map onto the discovered clusters.
+
+An additional further avenue to develop improved methods of artifact removal is upsampling of each artifact period, and employing a variant of principal component regression \cite{OShea2017} in which we regress the artifact in each channel against the components from nearby channels which have the same stimulation polarity during each phase of stimulation. A potential alternative to pursue would be the implementation of a Dirichlet Process Mixture Model \cite{WhyeTeh2004,Teh2010} in order to use a non-parametric model to cluster the data, and potentially include time dependencies. 
+
+To aid in reproducibility and further algorithm development in the field, we seek to publish our algorithm and example data openly. 
+
+\subsection{Aim 2: Neural and behavioral effects of cortical stimulation in somatosensory cortex }
+
+
+In this aim, we will determine how humans behaviorally respond to DCS applied to cortex contrasting native stimuli with artificial feedback. A secondary aim is to better understand neural dynamics in the context of stimulation. These aims are motivated in part by the notion that, in a real world neuroprosthetic, stimulation will be delivered during ongoing behavior and neural activity. In a closed-loop system, the latency between various brain computer interface (BCI) components needs to be accounted for in order to achieve the desired performance. What are the latencies for sensory restoration in sensory cortex, what are the neural dynamics relative to natural feedback, and can we engineer stimulation to modify these latencies? How do humans respond to both engineered stimulation and natural haptic feedback which overlap spatially and temporally? 
+
+\subsubsection{Aim 2.1: Slower response times to trains of DCS relative to natural haptic feedback in the same spatial location}
+
+A first step in understanding the behavioral effects of DCS is to compare the behavioral performance of DCS to natural sensory input. We did this by designing a response timing task where epilepsy patients with in-dwelling macroscale ECoG grids were asked to respond as quickly as possible to DCS trains of differing lengths applied to primary somatosensory cortex (S1), as well as to natural, haptic stimuli. We observed significantly faster reaction times to haptic stimuli relative to DCS, regardless of DCS train length and despite the fact that DCS circumvents ascending sensory pathways. This matches previous NHP work of ICMS stimulation of S1 \cite{Godlove2014a}. Collectively, the increased latency in responding to DCS relative to haptic stimuli would need to be accounted for in any future neuroprosthetic device.
+
+This is completed work in the process of submission.
+
+\subsubsection{Aim 2.2: Comparisons between temporal dynamics and time frequency responses to haptic stimuli and DCS in somatosensory cortex}
+
+Motivated by the results in Aim 2.1, we seek to understand the neural differences between natural haptic stimuli and DCS stimulation of sensory cortex. We will use the neural data acquired during Aim 2.1 and the methods of Aim 1.2 to compare the neural response to DCS relative to that of haptic stimuli, in order to better understand the cortical processing of DCS to S1. 
+
+We will compare broadband high gamma signals and event related potentials (ERPs) following stimulation onset, as well as differences in the time frequency maps between the two conditions. Preliminary analysis reveals some similarities in both the time series and time frequency maps in select, adjacent electrodes immediately surrounding sensory cortex, but additional responses unique to the natural haptic stimuli (i.e. absent in DCS trials) in somatosensory association areas. 
+
+Additional analysis will include characterizing canonical oscillatory band (theta, 4-8 Hz, alpha, 8-12 Hz) activity and whether specific frequency bands track differences in response times in different trials. Particular metrics will include phase-locking to analyze phase relationships between different channels in relation to conscious awareness of DCS, as well as event related phase amplitude coupling between theta and high gamma regimes \cite{Voytek2013}.  
+
+For future experiments, we have designed waveforms with initial high pulses, followed by trains of lower stimulation amplitude, which may better represent the cortical response to natural peripheral stimuli. Preliminary analysis shows a trend towards faster reaction times with initial high pulses. Future experiments will involve ensuring charge balanced waveforms are compared, in order to better understand the parameters of the waveform important for response. 
+
+Preliminary work has been completed (2 subjects), and experiments are ongoing. 
+
+\subsubsection{Aim 2.3: The behavioral and neural effects of temporally simultaneous and spatially overlapping haptic stimuli and DCS}
+
+In dynamic, closed-loop neuroprosthetics that provide feedback to the user, both natural and artificial feedback will be arriving concurrently. To better understand this, we developed a temporal order judgement task (TOJ), in which haptic stimuli and DCS are delivered with varying degrees of stimulus onset asynchrony (SOA) \cite{Miyazaki2016}.
+
+Preliminary analysis suggests that the response time delay to DCS relative to haptic stimuli predicts a region of overlap where haptic stimuli and DCS will be judged as potentially occurring simultaneously. We also demonstrate no specific masking of perception of either stimulus, suggesting that S1 cortex is able to process and separate spatiotemporally overlapping sensory modalities. 
+
+Our future work will involve continuing to collect data on this task, and investigating the functional neuroanatomy reported in fMRI studies during temporal order judgement tasks of tactile and visuo-tactile stimuli. Areas of potential interest include left ventral, bilateral dorsal premotor, and left posterior parietal cortices \cite{Miyazaki2016,Takahashi2013}.
+
+Preliminary work has been completed (2 subjects), and experiments are ongoing. 
+
+\subsection{Aim 3: Engineered DCS protocols to induce changes in cortical connectivity, plasticity, and output mapping }
+
+The optimal engineering of stimulation for clinical applications requires that the myriad of different protocols, developed theoretically and in animal models, will need to be validated in humans. What neural engineering applications from animal studies will best translate to human patients? Current experimental and patient constraints prevent a full exploration of established protocols. However, we can establish baseline forays into the efficacy of cycle triggered \cite{Zanos2013}, paired pulse \cite{Seeman2017}, and EMG triggered \cite{Lucas2013} stimulation protocols. These protocols are focused on enhancing plasticity in cortex, with the ultimate goal of restoring function to damaged cortex. Additionally, we seek to validate other output metrics for plasticity and cortical excitability in humans to assess the rehabilitative potential of different paradigms. These metrics include motor evoked potential (MEP) measurements such as motor thresholds (MT), electromyographic (EMG) amplitudes, as well as the overall motor pattern elicited by motor cortex stimulation. These protocols are focused on enhancing plasticity in cortex, with the ultimate goal of restoring function to damaged cortex. Lessons from these experiments would be important for clinical trials in human patients. 
+
+\subsubsection{Aim 3.1: Beta-oscillation triggered stimulation paradigm to enhance connectivity of beta-synchronous regions}
+
+By stimulating cortical areas during periods of heightened activity and excitability, we may be able to induce plasticity in cortex. This a collaborative effort with Jared Olson and Jeremiah Wander, inspired by primate work from Stavros Zanos and Eberhard Fetz at the University of Washington \cite{Zanos2013}. Specifically, beta (12-25 Hz) oscillations, which are thought to represent coordinated synaptic drive to excitatory pyramidal cells in cortical areas such as motor cortex \cite{Sherman2016}, have been shown in primate research to hold potential for closed-loop enhancement of plasticity. By stimulating during consistent phases of heightened beta power in the oscillatory cycle, we may be able to induce plasticity in cortex which could help with future rehabilitative applications. Evoked potentials (EPs) in adjacent areas of cortex serve as a proxy for connectivity, and changes in evoked potential size may be markers of local plasticity. By quantifying the changes in EPs, we can assess how plasticity may be affected by stimulation paradigms. 
+
+Thus far, we have observed a dose dependent effect on EPs during closed-loop, real-time beta oscillation triggered stimulation across seven subjects, measured by the change in EP magnitude in either the channel we recorded our beta oscillations from, or in an adjacent channel. The phase of stimulation does not seem to be a large contributing factor, but the greatest degree of enhancement may be when stimuli are consistently delivered during the hyperpolarizing surface potential. In one subject, we demonstrated a smaller increase, or no statistically significant increase in EP magnitude on adjacent beta-recording channels during a playback control condition. This work demonstrates the potential utility of closed-loop, oscillation based stimulation in humans. Future work will assess changes in resting state connectivity, and the correspondence between accuracy of phase of delivery and changes in EP magnitude.
+
+For this experiment, data from 7 subjects have been collected, and analysis is ongoing. 
+
+\subsubsection{Aim 3.2:  Paired pulse stimulation to enhance connectivity between two cortical sites}
+
+In order to validate other potentially clinically useful stimulation paradigms in humans, we will implement a paired pulse stimulation paradigm inspired by previous NHP and rodent work \cite{Seeman2017,Rebesco2010}. Importantly, this modality does not require real time recording from cortex concurrently with stimulation, enabling simpler hardware for implanted devices. This is inspired by the work of Stephanie Seeman, Brian Mogen, and Steve Perlmutter at the University of Washington. Here, in DBS patients undergoing DBS electrode placement, we will intraoperatively stimulate two connected regions of the cortex with fixed lags previously demonstrated to maximize facilitation and inhibition of cortical connectivity. Previous research has demonstrated an increase in connectivity between two regions as assessed through EP magnitude by consistently stimulating two connected regions with a latency determined to maximize long term potentiation (LTP),  \cite{Seeman2017}. Our main outcome variables will be motor evoked potential (MEP) amplitude as assessed through electromyography (EMG) recordings, motor thresholds (MT), and EP magnitude before and after conditioning. We hypothesize that we will observe an increase in MEP amplitude, EP size, and a decrease in MT with stimulation at the presynaptic site leading the postsynaptic site by 25 ms. However, if we use a lag of 100 ms between presynaptic and postsynaptic stimulation (A before B), or in a further experimental condition stimulate site B by 25 before site A (B before A, postsynaptic before presynaptic), we anticipate no changes in the above mentioned output metrics, or the opposite direction of changes. 
+
+This experiment is already programmed, and data has been collected on one subject.  
+
+\subsubsection{Aim 3.3: EMG triggered stimulation to remap motor cortex output}
+
+Another potentially clinically viable stimulation paradigm is the use of EMG triggered stimulation as a marker for increased cortical activity in motor cortical regions \cite{Lucas2013}. This is informed by prior work from Timothy Lucas and Eberhard Fetz at the University of Washington. Following arm movements, motor cortex demonstrates a heightened period of activity that is greater than the window for LTP following spontaneous cortical spiking \cite{Edwardson2013,Crammond2000}. Critically, this modality does not require real time recording from cortex concurrently with stimulation, enabling simpler hardware. 
+
+We will implement this paradigm in patients with in-dwelling ECoG electrodes as they are recovering in the hospital. We will record EMG activity from one muscle group (biceps, for example), and trigger stimulation in an adjacent motor cortical region (electrodes covering deltoid muscle motor cortex, for example) when the EMG amplitude exceeds a threshold. Our control condition will be the playback of the recorded stimulation pattern, irrespective of the underlying EMG activity. Similar to Aim 3.2, we will use changes in MEP amplitude and MT, as well as EP magnitude, to assess the effects of conditioning on both site A and site B. 
+
+We expect that after a short conditioning period (on the order of 20-30 minutes), we will observe a facilitation of the connection between the two cortical regions of these two muscle groups, and that upon stimulation of site B, we will see muscles recruited that were originally more prominent for site A. For cortical connectivity as assessed by EP testing, we expect to see greater EP magnitudes following test pulse stimulation, indicating a strengthened connection between site A and site B. Additionally, we expect to see a decreased MT for site B. Upon MEP stimulation of the site responsible for the recorded muscle group. During the control condition, we expect to see no change, or the opposite of the changes described above (decreased connectivity) 
+
+This experiment will be programmed and tested in patients with in-dwelling ECoG electrodes later this year and early next year. 
+
+\subsection{Related publications and presentations}
+
+\noindent Caldwell DJ, Cronin JA, Rao RPN, Ko AL, Ojemann JG, Sorensen LB, “What is the resistivity of the human brain? Insights from direct electrical stimulation, electrocorticographic recordings of the human cortex, and analytic models”, BMC Neuroscience 2018, CNS 2018 - Aim 1.1
+\medskip
+
+\noindent Caldwell DJ, Cronin JA, Rao RPN, Ko AL, Ojemann JG, Sorensen LB, “What is the resistivity of the human brain? Insights from direct electrical stimulation, electrocorticographic recordings of the human cortex, and analytic models”, Computational Neuroscience Meeting 2018, Seattle, WA, July 2018 - Aim 1.1
+\medskip
+
+\noindent Caldwell DJ*, Cronin JA*, Wu J, Weaver K, Ko AL, Rao RPN, Ojemann JG, “Cortical stimulation results in slower reaction times compared to peripheral touch in humans” *These authors contributed equally - in resubmission - Aim 2.1
+\medskip
+
+\noindent Olson JD*, Caldwell DJ*, Wander JD,  Zanos S, Sarma D, Su D, Cronin JA, Collins K, Wu J, Casimo K, Johnson L, Buckley R, Richardson A, Weaver K, Fetz E, Rao, RPN, Ojemann JG, “Dose dependent enhancement of Cortico-Cortical Evoked Potentials during Beta-Oscillation Triggered Direct Electrical Stimulation” - in preparation - Aim 3.1 
+\medskip
+
+\noindent Caldwell DJ, “Understanding the Neural Response to Direct Cortical Stimulation”, UW Data Science Summit, April 2018 - Aim 1.2, 2.2
+\medskip
+
+\noindent Caldwell DJ, "Engineering direct cortical stimulation in humans", UW Neural Computation and Engineering Connection, January 2018 - Aim 1.2, 2.2 
+\medskip
+
+\noindent Caldwell DJ, Cronin JA, Wu J, Kutz JN, Brunton BW, Weaver K, Rao RPN, Ojemann JG, “Spectrotemporal analysis of direct cortical stimulation compared to haptic stimulation in a response timing task in humans”, Society for Neuroscience – Annual Meeting, Washington DC, District of Columbia, November 2017 - Aim 1.2, 2.2 
+\medskip
+
+\noindent Caldwell DJ, Cronin JA, Wu J, Weaver K, Rao RPN, Ojemann JG, “Direct Cortical Stimulation Results in Slower Reaction Times Compared to Peripheral Touch in Humans”, OHBM 2017, Vancouver, Canada, June 2017 - AIm 1.2, 2.2
+\medskip
+
+\noindent Caldwell DJ, “Behavioral and neural differences between haptic stimulation and direct cortical stimulation in humans: implications for neuroprosthetics”, 7th International BCI Meeting, Workshop: Perception of Sensation Restored through Neural Interfaces, Asilomar, CA, May 2018 - Aim 1.2, 2.2, 2.3
+\medskip
+
+\noindent Caldwell DJ, Olson JD, Wander JD,  Zanos S, Sarma D, Su D, Cronin J, Collins K, Wu J, Johnson L, Weaver K,  Casimo K, Fetz E, Rao RPN, Ojemann JG, “Exploration of the phase and dose dependence of cortico-cortical evoked potentials during beta-oscillation triggered direct electrical stimulation in humans”, Society for Neuroscience – Annual Meeting, San Diego, CA, November 2016 - Aim 3.1 
+\medskip
+
+\noindent Caldwell DJ, Olson JD, Wander JD,  Zanos S, Sarma D, Su D, Cronin J, Collins K, Wu J, Johnson L, Weaver K, Fetz E, Rao RPN, Ojemann JG, “Enhancement of Cortico-Cortical Evoked Potentials by Beta-Oscillation Triggered Direct Electrical Stimulation in Humans”, NANS-NIC Meeting, Baltimore, MD, June 2016 - Aim 3.1
+\medskip
+
+\noindent Caldwell DJ, Olson JD, Wander JD, Zanos S, Sarma D, Su D, Cronin J, Collins K, Johnson L, Weaver K, Fetz E, Rao RPN, Ojemann JG, “Effect of distance on the magnitude and timing of Cortico-Cortical Evoked Potentials in oscillation triggered direct electrical stimulation in humans”, Neurofutures Meeting, Seattle, WA, June 2016 - Aim 3.1 
+\medskip
+
+\noindent \textbf{Additional publications} 
+\medskip
+
+\noindent Caldwell DJ*, Wu J*, Casimo K, Ojemann JG, Rao RPN, “Interactive Web Application for Exploring Matrices of Brain Connectivity”, Int. IEEE/EMBS Conf. Neural Eng. NER, pp. 42–45, 2017 , doi:10.1109/NER.2017.8008287, *These authors contributed equally
+\medskip
+
+\noindent Wu J, Casimo K, Caldwell DJ, Rao RPN, Ojemann JG, “Electrocorticographic Dynamics Predict Visually Guided Motor Imagery of Grasp Shaping “,Int. IEEE/EMBS Conf. Neural Eng. NER, pp. 199-202, 2017, doi:10.1109/NER.2017.8008325
+\medskip
+

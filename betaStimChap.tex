@@ -1,0 +1,499 @@
+
+ 
+% ========== Chapter on Oscillation Triggered stimulation 
+ 
+\chapter {Dose Dependent Enhancement of Cortically Evoked Potentials During Beta-Oscillation Phase Triggered Direct Cortical Stimulation of Human Cortex}
+
+Neuromodulation through direct electrical stimulation of the cerebral cortex may enhance neuroplasticity after stroke or trauma, potentially improving outcomes. Mechanistic theories of plasticity suggest that it may be critical to pair stimulation with endogenous neural activity. In order to better characterize the potential role of direct electrical stimulation for neurorehabilitation in humans, we studied the beta-oscillation (12-20 Hz) triggered electrocorticography (ECoG) stimulation through characterization of cortically evoked potentials (CEPs, a proxy for enhancement of short term synaptic plasticity). In 10 human subjects, 7 of whom completed the experimental paradigm, we recorded beta oscillations, and in real-time delivered electrical stimuli during various phases of heightened beta oscillations recorded electrode at a site which elicited CEPs. Using a linear mixed model, we discern a statistically significant increase in CEP size within electrodes immediately following conditioning, with larger increases for greater numbers of conditioning stimuli. In one subject, we compared beta-triggered oscillation with a control stimulation condition that was independent of underlying brain oscillations. We found electrodes where CEPs were larger during beta-band dependent stimulation compared with control. Heightened beta-oscillations alone did not enhance CEP magnitudes. When considering all electrodes across the cortex, we observe a trend towards increased CEP amplitudes at surface depolarizing phases relative to hyperpolarizing phases, with a significant effect at the greatest number of conditioning stimuli. In 3 subjects, the greatest percent increase in CEP magnitude was in the trigger channel. This study demonstrates that activity-dependent cortical stimulation can increase the CEP amplitude, a surrogate marker of connectivity suggesting a role in neurological rehabilitation, relative to open-loop stimulation, although much remains unknown about optimum stimulation parameters and the relationship with functional outcomes in humans.
+
+\section{Introduction}
+
+Stroke patients frequently suffer from incomplete neurological recovery resulting in functional impairments. Only 50-70\% of stroke survivors reach functional independence and 15-30\% are permanently disabled from a range of physical, cognitive, and communication impairments \cite{Lloyd-Jones2010}. The primary treatment is rehabilitation, and there are few adjunctive treatments available to improve neurological recovery. Similarly, people with traumatic brain injuries (TBIs) often have lifelong persistent neurological problems that are incompletely treated with current therapies \cite{Corrigan2014}. We have the potential to improve the neurological outcomes by guiding brain healing with neuromodulation techniques, thereby shaping the recovery process \cite{Edwardson2013}. One of these techniques, direct cortical stimulation (DCS), is an appealing neuromodulation technique; however, it is not yet clear how to apply cortical stimulation in humans to optimally shape neuroplasticity. 
+
+\subsection{Brain Stimulation to Enhance Neurological Recovery}
+We know that active participation in skill training can shape neurological recovery and lead to improved functional outcomes \cite{Wolf2006}. We also know that not using impaired limbs (learned nonuse) inhibits neurological recovery \cite{Elbert1997}. The various mechanisms that underlie functional recovery are complex \cite{Warraich2010}, but hinge on concepts of neural plasticity. A number of studies in animals and humans support the theory that neurological recovery can be enhanced by stimulating brain tissue. In these studies, repetitive stimulation changed the motor representation in cortex after lesioning in rats \cite{Nudo1990}, led to dendritic changes \cite{Adkins-Muir2003}, and ultimately improved functional outcomes \cite{Adkins2008,Adkins2006a}. Based on these findings, clinical researchers aimed to excite neural tissue with continuous epidural stimulation with implanted devices, essentially to increase brain activity during tasks and therefore enhance the recovery process in humans when coupled with traditional therapy \cite{Harvey2009}. Although a promising Phase II clinical trial demonstrated some improvement of functional outcomes with epidural cortical stimulation in stroke patients with impaired upper limb function \cite{Huang2008a}, the Northstar Neuroscience Phase III EVEREST clinical trial to improve hand and arm function in stroke survivors did not meet the primary efficacy endpoint; thus, it was discontinued. Several hypotheses surround the mixed results of these trials \cite{Plow2009,Levy2016a}, and it remains an open question if cortical DES can improve neurological outcomes.
+
+\subsection{Activity-Dependent Stimulation}
+In contrast to these “open-loop” stimulation techniques, it is possible that brain stimulation may have to be coupled with neural activity to effectively modulate neural connections, as discussed by Edwardson et al. \cite{Edwardson2013}. At the cellular level, principles of spike timing dependent plasticity (STDP) govern long term potentiation (LTP) and long term depression (LTD), and these competing cellular mechanisms in part govern neural modulation \cite{Bi1998,Dan2004,Feldman2012,Ganguly2013}. Animal studies showed that these factors can be modulated with electrical stimulation by triggering intracortical microstimulation (ICMS, electrical stimulation on the neuron level) from activity or activity-related neurological phenomenon \cite{Jackson2006}, and therefore the timing of in-vivo cortical stimulation may be critically important to the outcome. There is evidence from non-human primate research that it may be important to deliver DCS only during periods of neural activity \cite{Jackson2006,Lucas2013,Rembado2017,Zanos2018}, instead of delivering it continuously during therapy as in the EVEREST trial. To highlight potential functional changes in connectivity and brain function from neural activity dependent stimulation, a recent study highlights the use of delta (1-4 Hz) oscillation triggered stimulation during slow wave sleep to improve learning a brain computer interface task \cite{Rembado2017}. Further work in primates recorded beta-oscillations both intracortically and epidurally \cite{Zanos2018}, and delivered stimulation on particular phases of beta bursts. The authors observed a dose dependent conditioning effect, as well as maximal potentiation on the depolarizing phase of the oscillation. 
+
+Importantly for applications such as stroke rehabilitation, some investigators have noted improvements in physiological measures of motor function with non-invasive stimulation techniques, such as movement triggered Transcranial Magnetic Stimulation (TMS) paired to movement compared with random TMS stimulation \cite{Buetefisch2011}. Adding credence to the theory of brain state dependent stimulation for rehabilitation is a recent study that demonstrated TMS delivery during movement-related beta-band (16-22 Hz) desynchronization resulted in a significant increase in corticospinal excitability that lasted beyond the period of stimulation and depotentiation, as assessed through motor evoked potentials \cite{Kraus2016}.  Another study employed peripheral stimulation of the peroneal nerve timed to arrive at the peak negative phase of electroencephalography (EEG) detected movement-related cortical potentials compared to random stimulation, and found significantly increased Fugl-meyer scores, 10-m walking speed, motor-evoked potentials, and foot/hand tapping frequency \cite{Mrachacz-Kersting2015a}. From these recent studies, it is clear that various central and peripheral nervous system stimulation paradigms are enhanced by neural activity coupled stimulation. Beyond non-invasive and peripheral stimulation modalities, it is possible for brain DES to enhance outcomes. However, it is a challenge to operationally determine when the brain is actively engaged in a task, in real-time. Exploiting what is known about the importance of timing of stimuli for both synaptic potentiation and depression is an important place to start \cite{Feldman2012}. 
+
+\subsection{“Closed-Loop” Stimulation Control}
+To investigate if these principles of activity-dependent modulation extended to the multicellular neural systems level, system-level markers of activity are needed. The beta band of cortical oscillations correlates with periodic firing of neuronal ensembles \cite{Murthy1996,Murthy1996a}, suggesting the temporal summation of the activity of many neurons \cite{Okun2010}. Additionally, beta waves are also associated with attention (Murthy and Fetz 1996a) and closely associated with a more common form of neuroplasticity — learning \cite{Hikosaka2002}. Beta rhythms are conserved across species, and are suggested to emerge from the tightly synchronized integration of excitatory synaptic drive which targets pyramidal neurons, primarily the proximal and distal dendrites \cite{Sherman2016}.
+
+Likewise, instead of single-cell markers of plasticity, we need alternative measures to quantify connectivity at the multicellular scale. One such electrophysiological measure is the cortico-cortical evoked potential (CCEP): when the brain is stimulated in one location with an electrical pulse, an evoked potential appears at a connected area of cortex \cite{Matsumoto2012,Matsumoto2006a}. In humans, it is observed that CCEPs have complex morphologies, with an early and a late component, often termed N1/N2 or A1/A2 by different research groups \cite{Matsumoto2006a,Matsumoto2012,Keller2014e}. A single pulse of stimulation is thought to activate neurons within 2 - 4 ms (Godschalk et al. 1985). If we assume that the conduction velocity for myelinated pyramidal tract neurons in humans is between 3-80 ms-1, Keller et al. calculated that a 4 - 8 ms delay from stimulation to CCEP observation would result from a monosynaptic connection \cite{Keller2014e}. However, the recovery of the amplifier following current injection can obscure these findings, and researchers consider the N1/A1 response in the range of 10-30 or 10-50  ms \cite{Keller2014d,Entz2014b} following stimulation to represent the electrical excitation of multiple pyramidal cells in cortical layers IV-VI for human CCEPs. Recent research \cite{Keller2018} focuses on peak to peak amplitudes as a measurement of cortical connectivity, and we similarly focus on this.  Rather than simply being the result of a monosynaptic connection, we consider this response to be a oligo or polysynaptic connection between neurons \cite{Keller2014e}.  Evoked potentials have been used to establish the effects of stimulation paradigms on neural activity and connectivity in non-human primates \cite{Seeman2017}, and as such we similarly seek to use the modulation of CCEPs as a metric for the efficacy of the induction of short term plasticity. An additional recent study has looked at the phenomenon of Volume-Conducted Potentials (VCPs) through high resolution ECoG recordings in humans \cite{Shimada2017} to study propagation of a single source of neural signals near stimulation electrodes. We acknowledge potential contributions from neurons directly under the stimulating electrode pair to adjacent local field potentials, and therefore rather than focusing on absolute magnitudes which are of unclear importance, we emphasize changes in evoked potential due to our conditioning paradigm. 
+
+Rather than specifically describe our recorded signals as cortico-cortical evoked potentials (CCEPs), we instead will refer to them simply as cortically evoked potentials, or CEPs \cite{Zanos2018}, to avoid confusion with literature in reference to distant responses (on the order of centimeters) seen with higher levels of stimulation at connected sites. 
+
+Combining beta-band activity as a physiological marker of neural activity with the CEP as a surrogate measure of neural system connectivity and plasticity, we implemented a paradigm to record signals from the brain and provide stimulation in humans only during optimal periods of brain activity. 
+
+\section{Materials and Methods}
+\subsection{Subjects}
+We collected data from patients undergoing intracranial electrocorticography (ECoG) epilepsy monitoring at the Regional Epilepsy Center at Harborview Medical Center in Seattle, WA, USA. The study procedures were approved by the University of Washington Institutional Review Board (IRB). Research subjects participated between approximately 2 days after implantation (depending on their clinical course) until just before resection and removal of the ECoG electrodes at the completion of clinical monitoring and seizure localization. All cortical stimulation occurred after the conclusion of clinical seizure localization, and only after the subject restarted antiepileptic medications.
+
+\subsection{Electrode Grids}
+We used the ECoG electrodes placed for clinical monitoring with 8 x 8 electrode grids, with 10 mm spacing between electrodes (Ad-tech Medical, Racine, WI). Individual platinum electrodes were 4 mm in diameter, with 2.3 mm diameter exposed surface. These electrodes were placed by the neurosurgeon via a craniotomy window using standard techniques. Electrode wires were tunneled through the incision to the recording and stimulation equipment in the subject’s room. Typical subject implant period was approximately 7 days, during which they were in an inpatient monitored setting, awake and interactive. 
+
+\subsection{Recording and Stimulation}
+We used the Tucker-Davis Technologies (TDT, Alachua, Fl) hardware suite for recording and stimulation (Model RZ5D digital signal processor/ controller, PZ5-128 channel biosignal amplifier, IZ2H-16 channel stimulator, and the LZ48-400 battery pack) controlled with a PC running the proprietary TDT software suite.  We recorded raw neural data at 12207 Hz to resolve short-latency signal components and for artifact suppression. We employed a constant-current stimulation mode, which delivered voltage to meet a given current requirement. Our pulse duration was approximately 1.23 ms for each phase of our biphasic, bipolar rectangular pulse stimulation. 
+
+\subsection{Electrode Selection and Identification of CEPs}
+We identified primary motor cortex (M1) for stimulation and adjacent electrodes for recording. In most subjects we used multiple concurrent methods to determine the approximate anatomical location M1 electrodes: 1) on neuroimaging and subsequent cortical reconstructions, then  2) we located the focus of high-gamma response to overt and imagined hand movement (compared to rest) that corresponded to the approximate surface anatomical location of the hand motor cortex \cite{Leuthardt2004,Miller2007}, and 3) verified the functional location by evoking movements with stimulation. If clinically indicated, subjects previously underwent clinical stimulation mapping for the purposes or surgical planning. The results of the clinical mapping, when available, helped guide the selection of research stimulation amplitudes and aided identification of functional areas.  We chose hand-motor area as the preferred target location in this study partially because of prior stimulation in this area in the EVEREST study and related studies \cite{Levy2008,Huang2008a,Harvey2009,Plow2009}. Additionally, the theoretical window for activity dependent plasticity is potentially longer in motor areas compared with sensory areas, as M1 neurons activated through median nerve stimulation fire for several milliseconds, where M1 activity that causes a ballistic hand movement lasts for up to 250 ms \cite{Crammond2000,Edwardson2013}. Two adjacent electrodes were used for stimulation (bipolar configuration). 
+
+To evoke a CEP, we stimulated with individual pulses and increased the amplitude until we observed an evoked response in neighboring electrodes. We identified CEPs in recording channels by comparing all channels and selecting those with evoked potentials superimposed on the stimulation artifact. CEPs were qualitatively large amplitude, long duration, often biphasic responses present in a subset of channels in close proximity to the stimulation channels. As stimulation amplitudes were increased, CEP amplitudes would appear and increase in size in a nonlinear relationship with the stimulation artifact, and were subject to amplitude saturation. 
+
+Recording electrodes that demonstrated robust CEPs in response to stimulation were candidates for beta recording electrodes. We then selected the electrode with the largest evoked response and filtered for the beta band (biquad, cascaded high-pass and low-pass Butterworth filters between 12 and 20 Hz, with 12 dB roll off per Octave)  component of the time-series neural signal. If the initially selected electrode did not have a beta component (location dependent), we selected the electrode with the next largest CEP. We identified the maximum amplitude of the CEP by titrating up the stimulation amplitude until reaching maximum CEP amplitude.
+
+\subsection{Stimulation Delivery and Recording Paradigm}
+Once stimulation and recording electrodes were identified, we recorded the baseline root-mean-square (RMS) of the filtered beta band from the beta recording electrode, and then empirically selected the RMS value of the filtered beta signal that differentiated between beta bursts and baseline beta activity. Then, we digitally processed the band passed beta signal, and delay-triggered a single stimulus after the zero crossing of the wave ($0^\circ$, $90^\circ$, $180^\circ$, $270^\circ$, relative to a sine wave, or randomly, modified to match the experimental protocol) as long as the RMS value of the filtered signal exceeded that of baseline (Fig. \ref{fig:betaStimSchematic}). Between beta bursts, we delivered test pulses every 500 ms to evoke a CEP. We recorded the pattern of stimuli to be later delivered in open loop fashion in the control condition described below. 
+
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.95\textwidth]{figures/betaTriggered/betaStimSchematic}
+	\caption[Experimental Paradigm and Example Electrode Locations]{Bipolar, biphasic pulses were applied to the electrodes in blue. Conditioning pulses are illustrated to fall on a given part of the beta burst. Baseline pulses are test pulses which were more than 2 seconds away from the end of a beta burst. Probe pulses are test pulses which are less than 500 ms following a stimulation train. The targeted phase of delivery was determined a priori, and evaluated post hoc.}
+	\label{fig:betaStimSchematic}
+\end{figure}
+
+
+\subsection{Control conditions (stimulation playback)}
+After a brief rest period, we delivered stimuli in an open-loop fashion to the subject, independent of the underlying beta activity or phase, with the exact timing specified by the timing file generated from the closed-loop experiment (Fig. \ref{fig:betaStimSchematic}). For analysis, we considered conditioning stimuli in the playback condition to be stimuli marked as conditioning stimuli in the closed loop experiment, and probe stimuli in the playback condition to be probe stimuli in the closed-loop experiment. We similarly tested a null condition, where we delivered probe stimuli before and after a beta burst, but delivered no conditioning stimuli within the beta burst. 
+
+\subsection{Effect of real-time filtering on stimulation delivery}
+In the proprietary TDT software, the beta recording channel was bandpassed between 12-20 Hz using a digital, real-time biquad, cascaded high-pass and low-pass Butterworth filter between 12 and 20 Hz, with 12 dB roll off per Octave. A period of 20 ms was removed after each stimulus to avoid ringing through the real time band pass filter. This was determined by observing the filter response to a beta oscillatory signal with stimulation, and estimating the time for recovery to baseline. A zero crossing on either the rising or falling phase was used to trigger a stimulus a fixed number of samples later. For estimated delivery on the peak or trough of the beta signal, stimuli were delivered 16 ms later, corresponding to a quarter cycle for a 16 Hz oscillatory signal, which corresponds with the center frequency of the filter. Testing of the software with an oscilloscope phase lag dependent on the input frequency for the beta filtered signal relative to the center frequency due to the IIR filter in the frequency regimes of interest (12-20 Hz). We characterized the phase distortion due to the beta filtering as a function of frequency, by feeding in a sine wave of a fixed frequency in 1 Hz steps from 12-20 Hz (Supplemental Information, Fig. \ref{fig:betaStimOscopeTest}). Furthermore, we used a function generator with a fixed frequency output from 12-20 Hz, in 1 Hz steps, to both an oscilloscope and our recording system. We used this to trigger a stimulus in real time, which we then registered sequentially on the TDT. We compared the phase of delivery of the stimulus on the oscilloscope, and observed the non-linear phase difference we would expect from an IIR butterworth filter (Supplemental Information, Figure. \ref{fig:betaStimOscopeTest})
+
+We acknowledge the difficulties of real time filtering and non-linear phase delays due to IIR filters implemented in software, but oscilloscope testing and post-hoc confirmation supports the utility of our software design. We input signals from a function generator of sinusoidal, triangular, and square waveforms of varying amplitudes and frequencies to observe the real time effects of filtering (Supplemental Information, Fig. \ref{fig:betaStimTriangular}). We also visualized minimal signal interruption due to the blanking of the artifact (Supplemental Information, Fig. \ref{fig:betaStimTriangular}). We observe accurate tracking of the envelope of the magnitude of the beta oscillatory signal. 
+
+\subsection{Safety}
+Seizures are a known risk of cortical stimulation. To minimize the chance of provoking a seizure in subjects with known epilepsy, we did not attempt to stimulate near any location that demonstrated interictal-spiking activity during the patient’s clinical care. We also decreased or aborted stimulation if any epileptiform changes occurred on the clinical monitor during the course of research. We took precautions in each subject to avoid stimulation near the suspected (or confirmed) epileptic focus, as these areas may be particularly excitable at baseline \cite{Iwasaki2010,Enatsu2012}. The EVEREST trial importantly demonstrated the safety of cortical stimulation in humans. When designing our stimulation protocol, we sought to ensure patient safety by remaining within the stimulation parameters for clinical studies. Additionally, we designed the custom simulation scripts with safety mechanisms to prevent unintended stimulation, and operating procedures to ensure safe delivery of stimulation according to experimental protocols. We halted the stimulation if there were signs of brain irritability (spiking activity), because of the increased risk of seizure. 
+
+\subsection{Post-hoc analysis}
+\subsection{Classification of CEPs}
+We used custom MATLAB (MathWorks, Natick, Massachusetts, U.S.A.) and R (The R Foundation, USA) scripts for all data analysis. By convention, we classified pulses within a 500 ms window following stimulation to be probe pulses, and pulses more than 2 seconds after a burst of stimulation to be baseline pulses (Fig. \ref{fig:betaStimSchematic}). We compared the peak-to-peak amplitudes of CEPs associated with probe pulses to CEP amplitudes associated with baseline pulses. We subtracted the average neural response in each channel from 50 ms to 5 ms before the time of stimulation.  We segregated responses based off of 1-2, 3-4, or greater than 5 conditioning pulses delivered in a train. We performed no filtering upon the entire signal, as filtering smears the stimulus artifact in time and can obscure early potentials. Instead, to reduce common noise and increase the signal-noise ratio, we re-referenced all of the signals against the median of the non-noise channels which did not demonstrate EPs. This was considered on a channel and subject basis where artifacts ended and CEPs began (Fig. \ref{fig:betaStimExampleEP}).  We subsequently proceeded with our CEP peak analysis. 
+
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.95\textwidth]{figures/betaTriggered/example_CEP_subj_7}
+	\caption[Characteristic Cortically Evoked Potentials and Stimulation Pulse ]{The top plot shows individual (N=49) CEPs after re-referencing for the trigger channel in subject 7, along with an average waveform. The bottom plot shows for these pulses what the average stimulation pulse looks like as recorded. This demonstrates the relative scale of the stimulation pulse on a recording electrode to the evoked response observed. Of note is that the evoked response is on the order of 100-1000 times smaller than stimulation pulse. In order to account for potential amplifier recovery and artifacts from the stimulation pulses, the initial period of recording following the stimulation pulse were excluded from analysis owing to stimulation artifact.  The colored lines indicate individual trials, where the dark black line indicates the average response. The magnitude of an evoked potential for this channel was considered to be the peak to peak voltage in the 4 (or later) - 60 ms window following stimulation.}
+	\label{fig:betaStimExampleEP}
+\end{figure}
+
+
+\subsection{CEP Location Analysis}
+We analyzed all channels within our subjects, and excluded any from further analysis that were contaminated by amplifier recovery issues or were excessively noisy. 
+
+\subsection{CEP Identification and Conventions}
+We focused on the peak to peak amplitude of the CEP in a 4 ms (or later, if obscured by stimulus artifact) to 60 ms (assuming no additional stimulation during this time) window following stimulation (free from the subsequent stimulation artifact) to represent early, excitatory connections, representing the strength of structural and functional connectivity between regions \cite{Keller2018}, which builds upon prior work that considered different latency responses (N1, P1, N2) \cite{Keller2014d,Entz2014b}. We did this because the functional significance of different evoked potential components is incompletely understood, nor how they relate to cortical output.   For all analyses involving peak to peak magnitudes, we thresholded our mean peak to peak magnitudes at 150 $\mu$V, and only considered channels with magnitudes above this threshold. Any single trial with a peak-to-peak magnitude less than 25 $\mu$V, or greater than 1500 $\mu$V was also discarded, as these tended to be artifacts. We performed Savitsky-Golay smoothing only within our time window of interest prior to extracting the peak-to-peak amplitudes in order to obtain a more reliable estimate of the peak-to-peak amplitude 
+
+\subsection{Post-processing analysis of Phase Delivery}
+For analyzing the phase of delivery of the conditioning stimuli, we fit the pre stimulus signal from 50 ms before the stimulus until the time of stimulus with a sine wave using nonlinear least squares fitting via Levenberg-Marquardt method \cite{Marquardt1963}, with a moving average smoothing filter of 51 samples (4 ms window) to minimize the amount of high frequency noise fit \cite{Zanos2018}. The parameters of the sine wave fit ranged with a frequency from 12-20 Hz, with an offset in the model to account for discrepancies from baseline, and the $R^2$ value was calculated over all conditioning pulses to assess  phase delivery variability. Any fits with a $R^2$  below 0.7 were excluded from further analysis. Additionally, any fits that fell exactly on the boundaries of the frequency edges ($<12.01$ or $>19.99$ Hz), were also excluded from further analysis, as these often coincided with poor fits. We selected a 12-20 Hz fitting window, as this was the range over which our real time filter operated. Different frequency ranges would falsely estimate the trigger signals. The distribution of frequencies of the fit curves, the individual fitlines, and the phase at stimulus delivery were compiled for each subject and each channel 
+
+\subsection{Statistical Analysis across Subjects}
+In order to consider the effects of subject variability, stimulation intensity, the number of stimuli delivered during conditioning trains, and the phase of stimulation, we constructed a linear mixed model. This allowed us to disentangle the effects of variables we explicitly tested (the binned phase of delivery, whether or not a channel was a trigger channel, and how many conditioning stimuli we delivered) relative to ones that (particular channels nested within subjects). We implemented a linear mixed model in R, with the absolute difference from baseline as the dependent variable, and using the number of stimuli delivered during the conditioning trains, the binned phase ($0-180^\circ$, or $180-360^\circ$), whether or not a channel was a trigger channel for fixed effects, with random nested effects of channels within subject. The model also included interactions between the number of stimuli delivered as well as the binned phase, as well as the number of stimuli delivered during the conditioning train and the individual subject, to account for subject variability and potential effect on each of these fixed effects. Analysis of the residuals and cumulative distribution functions (supplementary fig. 8, 9) indicated that these analyses were appropriate for most of the data. Of note is the tremendous variability that can be seen in individual trial CEP responses. Despite this, we report a high conditional $R^2$ which suggests that the combination of our random and fixed effects explains a large fraction of our observed responses. 
+
+\subsection{Statistical Analysis with Subjects}
+For the seventh subject with the control stimulation condition, we fit a linear model with absolute magnitude as the independent variable, the number of stimuli in the conditioning train, the closed-loop or control status of the experiment, and an interaction effect between the conditioning effect and the number of conditioning stimuli.
+
+\section{Results}
+We carried out the experiments as described in the methods and illustrated in Figure \ref{fig:betaStimSchematic}. Ten subjects participated in the study, and seven completed the experiment protocol. We excluded one of these subjects (subject \# 5) from further analyses due to overlap between stimulation artifact and the neural signal, and an inability to calculate (supplementary figure, or data not shown?) a meaningful peak-to-peak voltage. Table \ref{table:betaStimSubj} illustrates the various currents used for each of the subjects (See supplemental information table \ref{table:betaStimSubjSuppl}, supplementary fig. \ref{fig:betaStimBrainsAppendix} for the subjects not included in the analysis). 
+
+The stimulation currents ranged from 0.75 to 3.5 mA with voltages ranging from 2.4 volts to 5.2 volts, with some intra-subject variability due to constant-current stimulation settings. Individual subjects including demographics are shown in table \ref{table:betaStimSubj}. Of note, these currents were empirically selected for each subject during the CEP mapping and thresholding phases. The number of conditioning stimuli and test stimuli for each subject and test condition are highlighted in table \ref{table:betaStimNumberDelivered} Grid locations are shown visually overlaid on the cortical reconstructions of the subjects (Fig. \ref{fig:betaStimBrainsIncluded}). 
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/betaTriggered/betaStimBrainsIncluded}
+	\caption[Subject cortical reconstructions]{Cortical reconstructions of the seven subjects included in analysis (see appendix for subjects not analyzed further). The trigger channel is highlighted ($\beta$), and was the one selected for monitoring and triggering. The cathodic first (-) and anodic first (+) channels are also highlighted for each subject, and indicate the channels used both for conditioning and test pulses.  
+	}
+	\label{fig:betaStimBrainsIncluded}
+\end{figure}
+
+\renewcommand{\tabcolsep}{1pt}
+\renewcommand{\arraystretch}{0.7}
+\begin{table}[ht]
+	\scriptsize
+	\begin{tabularx}{\textwidth}{@{}lllXllX@{}}
+				\toprule
+		Subject & Current (mA) & Voltage (V) (approx) & Phases set to be delivered & Age & Gender & Grid side and location \\
+				\midrule
+		1 & 2 & 5.2 & $180^{\circ}$ & 35 & F & Left temporal\\
+		2 & 3 & 5 & $0,180^{\circ}$ & 19 & M & Right frontal over central sulcus \\
+		3 & 3 & 4.2 & $180^{\circ}$ & 47 & F & Right frontal\\
+		4 & 0.75 & 3.4 & $270^{\circ}$ & 37 & F & Left frontal/temporal\\
+		5 & 0.75 & 2.4 & $90,270^{\circ}$ & 38 & F & Left temporal\\
+		6 & 1.75 & 3.5 & $90,270^{\circ}$random & 33 & M & Lateral temporoparietal \\
+		7 & 1.75 & 4.9 & $90,270^{\circ}$,null,playback & 43 & M & Left frontal/temporal \\
+								\bottomrule		
+	\end{tabularx}
+	\caption[Subject Demographics]{Demographics table showing the currents used for stimulation, phases tested, age, gender, grid location, and approximate location of epilepsy focus. Voltage applied was measured as a recorded representative voltage from the circuit monitoring the TDT stimulation in real-time.}
+	\label{table:betaStimSubj}
+\end{table}
+
+\renewcommand{\tabcolsep}{1pt}
+\renewcommand{\arraystretch}{0.3}
+\begin{table}[ht]
+	\scriptsize
+	
+	\begin{tabularx}{\textwidth}{@{}lXXXXX@{}}
+		\toprule
+Subject	\# & conditioning stimuli by targeted phase & \# pulses after 1-2 conditioning stimulus & \# pulses after 3-4 conditioning stimulus & \# pulses after 5 or more conditioning stimulus & \# baseline pulses (for all test pulses) \\
+		\midrule
+		1 & $180^{\circ}: 1451 $ & 6120 & 1240 & 390 & 780 \\
+		2 & $0^{\circ}: 1618$ \newline  $180^{\circ}: 2813$ & 1554 \newline 1836 & 447 \newline 486 & 507 \newline 138 & 360 \\ 
+		3 & $180^{\circ}: 6759$ & 2817  & 1272 & 1437 & 294 \\
+	    4 & $270^{\circ}: 4702 $ & 1683 & 825 & 1110 & 1188 \\
+		5 & $90^{\circ}: 1618$ \newline  $270^{\circ}: 1278$ & 330 \newline 128 & 54 \newline 68 & 73 \newline 274 & 25 \\ 
+		6 & $90^{\circ}: 2473 $ \newline $270^{\circ}: 3247 $ \newline Random: 2648 & 119 \newline 84 \newline 112 & 78 \newline 154 \newline 73 & 291 \newline 168 \newline 176 & 45 \\
+	5 & $90^{\circ}: 916$ \newline  $270^{\circ}: 794$ & 654 \newline 1466 & 454 \newline 1026 & 224 \newline 480 & 392 \\ 
+		
+		\bottomrule		
+	\end{tabularx}
+	\caption[Number of conditioning and test stimuli]{The number of conditioning stimuli, along with the number of before and after test pulses for each of the binned conditions (1-2, 3-4, 5 or greater conditioning stimuli) for all subjects. The set of baseline pulses for each subject served as the reference baseline for all conditions. 
+	}
+	\label{table:betaStimNumberDelivered}
+\end{table}
+
+\subsection{Description of CEPs observed}
+Figure \ref{fig:betaStimExampleEP} demonstrates characteristic CEPs from the study. We observed CEPs in locations primarily near the recording site, and restricted our analyses to the beta-recording channel and neighboring electrodes that demonstrated discernible CEPs (see figure 4 for a depiction of the average CEPs across the brain for subject \#7). We acknowledge the potential for the contributions of volume conducted potentials (VCPs) \cite{Shimada2017,Keller2014d,Entz2014b}, and have included supplementary figures (Supplementary Fig. 4a-f)  illustrating the individual average baseline waveform for all subjects at all channels across the grid to highlight temporal waveform differences between different channels, suggesting that we are analyzing additional waveform components beyond a solitary source beneath the stimulation channels. Additionally, we emphasize here that we analyze changes in CEPs as our output metric of interest, which are independent of volume conduction effects. Following our stimulation pulse, we observed characteristic and robustly reproducible CEPs (Fig. \ref{fig:betaStimExampleEP}), often with well defined peaks in the 4-60 ms range. We did not observe distant CEPs in our analysis. We believe this to be due to a combination of the low currents that we used for stimulation, as well as the fact that we often delivered stimuli within 50-80 ms of one another, potentially obscuring any delayed responses on the order of hundreds of milliseconds. 
+
+Figure 4: Map of CEPs across cortex. Pink channels indicate the stimulation channels, while gold indicates the trigger channel. Note the complex and variable morphologies across the cortex. 
+
+\subsection{Accuracy of Phase Delivery}
+As described in the methods, the calculation of the phase of delivery was a critical issue for subsequent data analyses. For all of the non-stimulation channels, we performed the estimation of frequency and phase as described in the methods section, for all of our channels. We highlight individual trigger channels from the closed loop protocol for the first subject (fig. 5), the seventh subject (fig. 6, fig. 7), as well as the open-loop playback control for the seventh subject (fig. 8, fig. 9). The individual and average fitlines, distribution of phases at the time of stimulus delivery, frequency of the curve fits, and $R^2$ values are shown. For the phase distributions, we calculate the circular mean, standard deviation, and vector length (Berens 2009) to ascertain the reliability of stimulus delivery for all channels across all subjects. We consider the mean vector length to be a marker of phase-stimulation consistency. 
+
+We additionally fit sinusoids to waveforms that had the the time of the stimulus artifact and early response interpolated out and were subsequently filtered an acausal 4th order butterworth between 12-20 Hz. For the subjects shown below, the results corresponded well, but the difficulty determining the data interpolation length and the effects of remaining early CEPs or artifacts on the filtered data convinced us to proceed with fitting the raw data for more accurate estimations of phase. (Data not shown).
+
+
+Figure 5: Fitlines, phase, goodness of fit, and frequency distributions for the phase estimations for the trigger channel for subject 1 for 180$^\circ$ target phase
+a) Individual and average (225) fitlines for all conditioning trials for the target 180$^\circ$ condition from 40 ms before to the time of stimulation that had an $R^2$ greater than 0.7, and were between 12.01 and 19.99 Hz. B) Distribution of phases at the time of stimulus delivery for the fitlines in a). The vector represents the circular mean direction of the distribution, and is our estimate of the average phase of delivery. C) Distribution of the $R^2$ values for all of the conditioning stimuli. D) Distribution of the frequencies of the sine waves from the fitlines of a)
+
+
+
+Figure 6: Fitlines, phase, goodness of fit, and frequency distributions for the phase estimations for the trigger channel for subject 7 for 90$^\circ$ target phase. 
+a) Individual and average (279) fitlines for all conditioning trials for the target 90$^\circ$ condition from 40 ms before to the time of stimulation that had an $R^2$ greater than 0.7, and were between 12.01 and 19.99 Hz. B) Distribution of phases at the time of stimulus delivery for the fitlines in a). The vector represents the circular mean direction of the distribution, and is our estimate of the average phase of delivery. C) Distribution of the $R^2$ values for all of the conditioning stimuli. D) Distribution of the frequencies of the sine waves from the fitlines of a)
+
+
+
+Figure 7: Fitlines, phase, goodness of fit, and frequency distributions for the phase estimations for the trigger channel for subject 7 for 270$^\circ$ target phase. 
+a) Individual and average (170) fitlines for all conditioning trials for the target 270$^\circ$ condition from 40 ms before to the time of stimulation that had an $R^2$ greater than 0.7, and were between 12.01 and 19.99 Hz. B) Distribution of phases at the time of stimulus delivery for the fitlines in a). The vector represents the circular mean direction of the distribution, and is our estimate of the average phase of delivery. C) Distribution of the $R^2$ values for all of the conditioning stimuli. D) Distribution of the frequencies of the sine waves from the fitlines of a)
+
+
+
+Figure 8: Fitlines, phase, goodness of fit, and frequency distributions for the phase estimations for the trigger channel for subject 7 for the playback control condition, for phases at 90$^\circ$ in closed-loop condition. 
+a) Individual and average (225) fitlines for all conditioning trials for the target 180$^\circ$ condition from 40 ms before to the time of stimulation that had an $R^2$ greater than 0.7, and were between 12.01 and 19.99 Hz. B) Distribution of phases at the time of stimulus delivery for the fitlines in a). The vector represents the circular mean direction of the distribution, and is our estimate of the average phase of delivery. C) Distribution of the $R^2$ values for all of the conditioning stimuli. D) Distribution of the frequencies of the sine waves from the fitlines of a)
+
+
+
+Figure 9: Fitlines, phase, goodness of fit, and frequency distributions for the phase estimations for the trigger channel for subject 7 for the playback control condition, for phases at 270$^\circ$ in closed-loop condition. 
+a) Individual and average (225) fitlines for all conditioning trials for the target 180$^\circ$ condition from 40 ms before to the time of stimulation that had an $R^2$ greater than 0.7, and were between 12.01 and 19.99 Hz. B) Distribution of phases at the time of stimulus delivery for the fitlines in a). The vector represents the circular mean direction of the distribution, and is our estimate of the average phase of delivery. C) Distribution of the $R^2$ values for all of the conditioning stimuli. D) Distribution of the frequencies of the sine waves from the fitlines of a)
+
+\subsection{Phases across cortex}
+For each channel in the electrode array that has reliable neural recordings, we use the length of the circular mean vector as described in the methods as a metric for goodness of fit. A small value indicates a more random distribution of phases. Figure 10 illustrates for the first subject the distribution of phases across cortex (indicated by color), while the size of the circle indicates the consistency of phase delivery. Of note is that the trigger channel demonstrates the greatest consistency of phase delivery, and is within 6$^\circ$ of the target frequency on average. 
+
+
+Figure 10: Phase of delivery across the cortex for subject 1.
+The size of each circle represents the circular mean vector length of the phase distribution, while colors indicate the circular mean phase of delivery. The triggering channel indicates the channel from which the filtered beta oscillations were used to trigger conditioning stimuli (black electrodes). Of note is that the trigger channel had the most consistent phase of delivery, which was at 174$^\circ$, relative to the desired phase of 180$^\circ$. Adjacent channels may have a phase similar to the triggering channel, which undergoes a shift in phase and less consistent delivery at electrodes further from the triggering electrode. 
+
+To further look at the accuracy of phase delivery within a beta burst in our real-time system, we analyzed random subsets of beta bursts and visualized the consistency of phase delivery (Supplementary Fig. 5). To visualize post-hoc the real time performance of our beta filtering, blanking, and peak detection, we visualized a random subsection of our output (Supplementary Fig. 6). In general, the real time filter was able to stimulate near the desired phase. 
+
+\subsection{Beta burst lengths}
+To characterize the number of stimuli delivered during each calculated beta burst, we constructed histograms for each subject and each stimulation type (Supplementary Fig. 7). This was also critical to ascertain the amount of retriggering off of prior stimuli during the conditioning phases. Most stimuli trains fell under 10 stimuli per beta burst. Physiologic studies in primates have shown beta oscillations during normal behavior to be less than 10 cycles (Zanos et al. 2018), indicating that the majority of our beta oscillations and stimuli were physiologically based, rather than due to retriggering. 
+
+\subsection{Aggregate analysis: dose dependence and binned phase}
+We next looked at the spatial selectivity and phase selectivity. After calculating the phase of each channel, we binned channels with conditioning phases between 0-180 into one bin, and between 180-360 degrees into another. With this as a categorical variable, we performed a linear mixed model analysis to ascertain the effect of the number of conditioning stimuli, the current delivered, the binned phase of stimulation as well as the subject ID. When we look across subjects (Fig. \ref{fig:betaStimAcrossSubjsPhase}), we saw variability both in the size of the baseline and conditioned CEPs, as well as the degree of dose dependence. Individual trends for subjects can be seen in figure 12, where some subjects display clear increases in CEPs (subjects 2,7), while others show little change across electrodes (subjects 1, 6). 
+
+Testing our hypothesis of the stimulating in a putatively more excitable neuronal state (depolarizing phase of beta-oscillations), we observe a trend towards increased CEP modulation on the depolarizing stimulus, and statistically significant phase dependence at the greatest number of conditioning pulses (Table 3a). An ANOVA on the linear mixed model reveals a statistically significant effect of the number of conditioning stimuli, as well as the interaction between phase and the number of conditioning stimuli, but not between the number of stimuli and whether or not a channel was a trigger channel (Table 3a). Post-hoc testing reveals there to be a significant interaction effect for the number of conditioning stimuli and phase of delivery for the 5 or greater conditioning stimuli delivered. (Table 3c)
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.95\textwidth]{figures/betaTriggered/betaStimAcrossSubjsPhase}
+	\caption[Combined subject CEP modulation]{Compiled subject effect of percent change in CEP magnitudes across subjects at all channels with CEPs as a function of mean phase angle of conditioning at that electrode. The condition of 5 or greater stimuli in a conditioning train is compared to the baseline. The size of the circle indicates the mean circular vector length for the delivered phase. Larger circles indicate a more consistent phase of delivery.  
+	}
+	\label{fig:betaStimAcrossSubjsPhase}
+\end{figure}
+
+
+a)
+ANOVA table 
+Sum squared error	Mean square error	Numerator Degrees of Freedom (DF)	Denominator DF	F Value	Probability(>F)
+Number of conditioning stimuli (NCS)	143522	71761	2	31788	11.644	8.808e-6
+Phase of stimulation (PS)	19440	19440	1	2761	3.154	0.076
+Trigger channel (TC)	12355	12355	1	19	2.005	0.173
+NCS:TC interaction	7812	3906	2	31202	0.634	0.531
+NCS:PS interaction	38824	19412	2	31238	3.145	0.0429
+b)
+Residuals
+Scaled Residuals	Min
+-7.1911
+
+First Quartile
+-0.5382	Median
+-0.0281	Third Quartile
+0.5112
+Max
+20.9450
+
+c)
+Predictors	Estimates	Confidence Interval 	P value
+Intercept	8.68	-2.13 – 19.50	0.176
+[3,4] conditioning stimuli	4.32	1.05 – 7.58	0.010
+[5,inf) conditioning stimuli	10.25	6.68 – 13.83	<0.001
+90$^\circ$ phase class	-0.77	-4.70 – 3.15	0.700
+Non-trigger channel	7.34	-2.32 – 17.00	0.152
+[3,4]:trigger channel interaction	1.05	-3.96 – 6.06	0.681
+[5,inf):trigger channel	-2.40	-7.82 – 3.01	0.385
+[3,4]:90$^\circ$  phase	-1.02	-5.38 – 3.34	0.646
+[5,inf):90$^\circ$  phase	-6.26	-11.17 - -1.35	0.012
+
+d)
+Random Effects
+$\sigma^2$	6162.86
+$\tau_{00} $ channel:subject	92.50
+$\tau_{00} $ subject	133.96
+ICC channel:subject	0.01
+ICC subject	0.02
+Observations	31889
+Marginal $R^2$/Conditional $R^2$	0.003/0.039
+
+Table 3: Output from linear mixed model: a) ANOVA on the linear mixed model. b) Distribution of residuals following fitting. c) Post-hoc comparisons of factors and interaction effects. Welch’s method is used to obtain estimates of the p values for the given pairwise comparison of fixed effects following the original ANOVA. d) Analysis of random effects following fitting. 
+
+
+Figure 12: Individual plot of percent change in CEP magnitudes across subjects at all channels with CEPs as a function of mean phase angle of conditioning at that electrode.
+Plot of percent change in CEP magnitudes across subjects for all electrodes with CEPs that met our criteria mentioned in the methods. The condition of 5 or greater stimuli in a conditioning train is compared to the baseline. The size of the circle indicates the mean circular vector length for the delivered phase. Larger circles indicate a more consistent phase of delivery. 
+
+
+(50 ms before stim,no averaging, no threshold, 25 $\mu V $ min,1500 $ \mu V $ max)
+Figure 13: Dose dependent conditioning effect between phase groupings: For all subjects and channels with robust evoked potentials, the circular mean phase angle was used to bin the data into either hyperpolarizing (0-180$^\circ$) or depolarizing (180-360$^\circ$) groupings. The percent difference from baseline was then calculated for each stimulation condition. The trend towards increasing number of conditioning stimuli increasing the magnitude in EP is highly significant (p<0.001), while there is a significant effect at greater than 5 conditioning stimuli for the depolarizing phase (270$^\circ$) relative to the hyperpolarizing phase (90$^\circ$). Individual points represent a single channel, with subjects 1 through 4 and 6 through 7 represented. The median, 25\%, and 75\% quartiles are also visualized.
+
+\subsection{Randomized stimulation, beta-oscillatory activity alone, and playback controls}
+
+We tested the effect of a beta burst on the pre- and post-CEP amplitudes in the absence of any stimulation during the burst, as well as a control playback condition as described in the methods (stimulation pattern previously recorded, delivered asynchronously with beta activity). The null test pulses in most channels following a beta burst had a CEP magnitude than the corresponding (for an example channel from subject 7, see table 4) that was not significantly different than baseline. 
+
+We next sought to quantify the effect of activity dependent stimulation compared to our control, playback condition. As an example, channels adjacent to the beta-recording channel in Subject 7 (Figure 14), we saw significantly lower CEP magnitudes for the conditioning trains with 5 or more pulses (Table 4) across conditions for the playback control condition relative to the beta-triggered stimulation paradigm, with no difference in baseline levels (Table 4). The magnitude of the difference between the condition where 5 or more conditioning stimuli were delivered in a conditioning train and the baseline pulses were greater in the beta-triggered stimulation case, suggesting a greater increase in short term plasticity for the beta-triggered oscillatory case. Of note, however, is that there does appear to be a weaker, although still present effect for short term plasticity induction via rhythmic delivery of stimuli. 
+
+
+Figure 14: Beta-triggered playback vs. control condition for Subject 7, Channel 14
+Additional figure illustrating the differences in the activity dependent and playback condition for an additional channel adjacent to the beta recording channel. None of the playback conditions differed significantly from one another (while all beta-triggered stimulation conditions other than the baseline and 1-2 conditioning pulse experiment were significantly different than the playback condition. Box plots indicate the median, 25\% and 75\% interquartile range (IQR), while notches illustrate (1.58 * IQR  / sqrt (n)) for each condition. 
+
+
+a)
+ANOVA table 
+Degrees of Freedom	Sum Squared Error	Mean Square Error	F Value	Probability(>F)
+Number of conditioning stimuli (NCS)	4	71761	154397	10.628	1.573e-8
+Open vs. closed loop (OLCL)	1	19440	971275	66.858	4.892e-16
+OLCL interaction	4	12355	70964	4.885	6.378e-4
+
+b)
+Residuals
+Scaled Residuals	Min
+-267.89
+
+First Quartile
+-69.14	Median
+-10.30	Third Quartile
+46.91
+Max
+843.54
+
+c)
+Predictors	Estimates	Confidence Interval 	P value
+Intercept	345.69	311.92 - 379.46	<0.001
+Null case	7.10	-28.90 - 43.09	0.699
+[1,2] conditioning stimuli	2.54	-33.5 - 38.59	0.890
+[3,4] conditioning stimuli	38.42	1.30 - 75.54	0.042
+[5,inf) conditioning stimuli	95.74	54.66 - 136.83	<0.001
+Playback control	-23.00	-70.75 - 24.75	0.345
+Null:playback interaction	-13.30	-64.20 - 37.60	0.608
+[1,2]:playback interaction	-2.59	-53.57 - 48.40	0.921
+[3,4]:playback interaction	-28.68	-81.17 - 23.82	0.284
+[5,inf):playback interaction	-83.32	-141.42 -  - 25.22	0.005
+
+cd)
+Observations	2192
+Marginal $R^2$/Conditional $R^2$	0.056/0.054
+
+Table 4: Linear model results for closed-loop vs open-loop stimulation in Subject 7. a) ANOVA on the linear model for the closed loop vs. open-loop stimulatiom. Significant p-values are shown in bold. b) Residuals for linear fit model. c) Post hoc comparisons of interaction effects, with the number of stimuli,as well as the interaction between the number of conditioning stimuli and the closed loop playback being significant for the linear model used. c) analysis of the model fit
+
+In subject 6, we tested hyperpolarizing stimulation, depolarizing stimulation, and a randomized phase condition where the phase for any given stimulation train was randomly picked. In this subject, we did not observe any robust differences between groups (Figure 15). The lack of large scale effects in this subject (~ 5\% change in CEP magnitude) may explain the similarity between groups.
+
+
+Figure 15: Dose dependent conditioning effect for subject 6: Test pulses belonging to each either a targeted hyperpolarizing, depolarizing, or random (but constant within a train) phase are compared for subject 6 as a function of the number of conditioning stimuli. For this subject, there did not seem to be a clear effect of phase. Box plots indicate the median, 25\% and 75\% interquartile range (IQR), while notches illustrate (1.58 * IQR  / sqrt (n)) for each condition. 
+
+Specificity for the trigger channel.
+Although our linear mixed model did not reveal a clear role for the trigger channel always eliciting the greatest change, in a number of subjects (2,3,4, and 6), the greatest degree of change was seen in the trigger channel (Fig. 16, supplemental figures)
+
+
+Figure 16: Percent change across cortex. Visualized are two subjects(\#2,\#4)  for whom the degree of change was greatest in the triggering channel.
+
+\section{Discussion}:
+In this study we investigated the effects of beta-triggered cortical stimulation on a physiological marker of neural connectivity, the CEP, and found a dose-dependent increase in the amplitude of the CEP, related to the number of stimuli delivered in a beta burst. This trend was consistent across subjects, however the absolute magnitude of the CEPs varied between subjects. The trend was decreased in the control playback conditions suggesting that the effect was dependent upon synchronization with endogenous neural activity. Beta-bursts alone did not result in enhanced CEP magnitude. These physiological findings in humans are consistent with prior animal studies that link cortical stimulation with motor activity and/or associated neural activity \cite{Bi1998,Dan2004,Jackson2006,Feldman2012,Ganguly2013,Lucas2013}. Also, these findings are consistent with a possible mechanism to explain prior clinical studies that showed improved neurological outcomes when linking non-invasive stimulation with motor activity \cite{Mrachacz-Kersting2015a,Kraus2016}. 
+
+We observed a trend towards increased CEP magnitudes in the depolarizing phase of stimulation, similar to prior primate work \cite{Zanos2018}. However, our results were less consistent than seen in the prior literature. Possible reasons for this will be discussed below. We additionally see a more network wide increase in CEP magnitude, rather than any particular dependence on whether or not a channel was a trigger channel. 
+
+Additionally, we observed CEPs that were similar in character to those described in prior human studies. We observed a clear early response representative of the A1/N1 previously described \cite{Matsumoto2006a,Matsumoto2012,Keller2014e}. Due to our stimulation protocol, and stimulation amplitude level which resulted only in local CEPs, we did not robustly observe the A2/N2 response, which is often seen 100-300 ms post stimulation \cite{Keller2014e}. 
+
+Overall, we found that the measured CEPs were polymorphic across subjects and across channels within subjects, which posed a challenge to standardized measurement. However we observed high within-subject and within-channel repeatability. 
+
+\subsection{Subject variability and dose response}
+We observed a clear dose dependent effect across subjects through our linear mixed model analysis. On an individual subject basis, we see a variability both in the size of the baseline and conditioned CEPs, as well as the degree of dose dependence. A likely explanation for this is the placement of the electrodes, which differed from subject to subject and was determined for clinical reasons. Subject \#7 did not demonstrate a clear increase in CEP magnitude at the beta-recording electrode, while demonstrating clear CEP enhancement at channels adjacent to the beta-recording channel, while subjects \#2, 4, and 6 showed the greatest percent increase effect at the trigger channel relative to other channels with their electrode grids (Figure 16). This suggests a complex relationship between our conditioning paradigm and every subject.
+
+Differences in baseline excitability were clear, as despite our varying stimulation levels, the size of response did not always map to the stimulation current used. For example, subject \#4 had the smallest magnitude of CEPs, with a current delivery level of 0.75 mA, while subject \#5 also had a current delivery of 0.75 mA, but with magnitudes after conditioning comparable to other subjects with higher stimulation currents.
+
+Additional potential modulating factors include the cognitive state of the subject during the experiment, medication status, and the level of stimulation used. As patients were being treated for epilepsy, and were on a variety of painkillers and anti-epileptic drugs, there could be baseline differences in cortical excitability. Beyond these factors, a subject’s inherent characteristics and baseline excitability could determine the influence of a conditioning paradigm, similar to the wide variety of responses seen in individuals to pharmaceuticals. This highlights the potential individual subject characteristics that may need to be considered for closed loop therapy applications, where one treatment strategy may not be appropriate or optimal for all individuals. 
+
+\subsection{Network wide changes}
+The changes seen in channels outside of the triggering channel speaks to the complex effects of stimulation on the brain. There is an intersection of phase, stimulation level, subject variability, number of conditioning stimuli, and other unknown factors which contribute to the responses we see here. In total, (fig. \ref{fig:betaStimAcrossSubjsPhase}, fig 12.), we see an overall enhancement of CEP magnitude across cortex, speaking to potentiation of connection strength, but the changes that would be seen over longer time periods remain unknown. 
+
+\subsection{Limitations of findings}
+While this study demonstrates physiological effects of cortical stimulation in humans, we were somewhat limited by subject availability and testing time in our capacity to explore the parameter space of cortical stimulation. We were able to conduct the study protocol only once per subject, limiting our capacity to test and compare multiple stimulation and beta recording sites. We were also not able to test a broad range of stimulation pulse parameters (amplitude, width, shape, and variations of charge balance, or variations on stimulation frequencies) that likely have an effect. These are limitations to the generalizability of the findings and suggest that the technique could be further optimized in future studies. Additional animal studies could allow for greater testing time within subjects and could speed the optimization process.
+
+We also acknowledge that this study demonstrates the ability to modulate a short-term physiological marker of neural connectivity (the CEP), and that it was beyond the scope of this study to test humans with neurological impairments for cumulative changes in functional outcomes. Similarly, it has not yet been definitively demonstrated in the literature that changes in the CEP correlate with changes in neurological outcomes or function. However, in the context of prior human cortical stimulation studies \cite{Levy2008,Huang2008a,Harvey2009,Plow2009,Buetefisch2011,Mrachacz-Kersting2015a,Kraus2016}, the changes in CEPs that we observed could be a physiological marker of the neuroplastic changes involved in neurological recovery. Given the invasiveness of ECoG based neural stimulation and recording, linking CEPs with functional outcomes would likely require a long-term neural implant, and therefore may require further testing in animal models. To test the effects on functional outcomes in humans, a fully implanted system would likely be required for chronic stimulation. 
+
+\subsection{Phase delivery accuracy}
+We acknowledge the limitations of this method of phase delivery, but the difficulties of real time filtering and concurrent stimulation necessitated an approximate method to determine beta-oscillations in real time with concurrent stimulation. Trials with long duration artifacts or large CEP magnitudes from can affect the estimation of phase on the next conditioning stimulus. 
+
+\subsection{Comparisons with existing literature}
+Responses to ECoG stimulation in cortex have complicated morphologies, with each part of the evoked potentials representing a different set of underlying synaptic connectivity \cite{Keller2014e}. Amplifier-saturation recovery artifact can frequently obscure findings, as we found on our initial exploration of the human data. The later responses likely represent oligosynaptic or polysynaptic connections, and may represent a blend of structural and functional connections \cite{Keller2014e}. These later responses showed the dose-dependent response in humans. The results were promising because with this subject, we were able to demonstrate the ability to record cortical potentials, decode them in real time, and deliver stimuli as expected. Second, the morphology of the CCEP changes with brain connectivity, and therefore with brain location. Figure 4 shows an aggregate plot of CEPs from all electrodes across the ECoG grid in one subject, highlighting the varying morphology.
+
+Another reason underlying the diversity of responses seen could be due to the size and placement of the clinical grid electrodes. The electrode grids in human subjects are currently of a larger area than those used recently in primate studies for cycle triggered stimulation (2.3 $mm^2$ exposed vs. 0.06 $mm^2$ exposed area \cite{Rembado2017,Zanos2018}). Additionally, our grids are placed subdurally, while those in prior primate studies were often epidural electrodes. The number of neurons underlying our electrode grid areas is on the order of 500,000 neurons \cite{Miller2009a}. This large volume of neurons targeted may result in a large enough subpopulation being stimulated on their appropriate phase of oscillation, regardless of the overall phase measured at the beta recording electrode, to invoke short term synaptic plasticity and CCEP enhancement. 
+
+Additionally, the 1.23 ms pulse width used (chosen to be similar to clinical mapping), is longer than that used in a recent primate study which employed beta-oscillation driven stimulation \cite{Zanos2018}. We believe it is possible that these longer pulses result in a different response to stimulation, which catches a large enough population cells in an excitable state to result in enhanced short term connectivity. 
+
+We did not observe any distant CEPs with our stimulation and conditioning protocol, and reiterate that at our stimulation levels we are not exploring the same phenomena as other studies \cite{Keller2014d,Matsumoto2004b,Matsumoto2006a}. Our observance of only local effects may have been due to our lower current levels used (750-3500 $\mu$A), or location of stimulation. The fact that we used pulses of 1.23 ms in duration, relative to the 200-300 $\mu$s used by other groups, suggests that one of the most important features for activating neurons is the amplitude of the stimulation current. We additionally have observed smaller CEPs at the same site for the same current density with a smaller amplitude but larger pulse width (unpublished). 
+
+Although electrodes were selected that did not seem to be a part of the epilepsy centers, and data was screened for epileptiform artifacts, it is still possible that altered brain connectivity patterns resulting from epilepsy could have results that differ from those that would be seen in non-epileptic brains. Change in control of hand or speech are the second type risk to the subject. In theory, the stimulation could change how the brain controls their hand or speech. We think the change will be similar to what is seen with simple practice or exercise \cite{Carel2000,Page2009}.
+
+\subsection{Consideration for volume conduction of stimulation pulse}
+In addition to the expected time delay of 2 - 4 ms for activation of neurons following a pulse as noted above, based on previous experimental \cite{Adrian1936,el1982effect,Rosenthal1967,Logothetis2010}; and theoretical studies \cite{Nathan1993,Kudela2015} we expect little direct effect of cortical surface stimulation at distances greater than 5-10mm. 
+
+\subsection{Heterogeneity of responses}
+Further support for the heterogeneity of responses seen in different subjects is found in recent work with a paired-pulse stimulation for spike-timing dependent plasticity in primate sensorimotor cortex \cite{Seeman2017}. The outcome measure in these experiments was CCEP magnitude. The authors observed that only 2/15 sites tested in somatosensory cortex demonstrated an increase in CCEP magnitude based off of the paired-pulse conditioning paradigm. This suggests that optimal enhancement of connectivity is influenced by a myriad of factors, many of which we currently do not understand. Furthermore, heterogeneity of responses were also observed in non-invasive studies of humans where in 200 subjects, researchers did not see significant effect of TMS paired associative stimulation, but saw significant differences between studies \cite{Lahr2016}. 
+
+\subsection{Anti hebbian STDP}
+Part of these heterogeneous responses may be due to the existence of both Hebbian (presynaptic stimulation leads postsynaptic spike) STDP, and anti Hebbian STDP (postsynaptic stimulation leads presynaptic spike) \cite{Letzkus2006,Feldman2012}. Our widespread electrical stimulation most likely activates a mixed population of inhibitory and excitatory synapses, due to the indiscriminate nature of stimulation activating axons passing through the region of cortical tissue. 
+
+\subsection{Note on safety}
+Our use of 2.3 mm exposed diameter electrodes, for a surface area of 4.15 $mm^2$ (classifying our electrodes as “macro” electrodes), a maximum delivery current of 3500 $\mu$A, and 1.23 ms pulse widths, yielded a per phase charge density of 100 $\mu$C/cm2, above a maximum charge density limit for chronic stimulation of 30 $\mu$C/cm2 noted in a recent review of human stimulation studies \cite{Cogan2016b}, although the majority of stimulation was below that level. Stimulation levels were well within those used routinely for clinical studies, which can reach into the 10-20 mA range. Further refinement of stimulation parameters, locations, and materials may allow for safe, lower charge densities in an optimized therapeutic application. 
+
+\subsection{Seizure potential}
+We have run stimulation studies on dozens of individuals, with one seizure to date. This subject’s typical seizure activity was in the mesial temporal region, however the post-stimulation seizure began after the cessation of a short conditioning stimulation session (aborted because of post-stimulation spiking activity) and was observed to start as a left temporal complex partial seizure, then it generalized. The timing related to stimulation and differing seismology suggests that the seizure was possibly related to research stimulation. 
+
+While any seizure activity connected with stimulation experiments is to be avoided, it should be noted that these research subjects are implanted for clinical epilepsy monitoring because of intractable seizures. It is a known risk that epileptic patients may experience a seizure in relation to clinical stimulation mapping, and may not preclude rehabilitative applications at low levels of stimulation in otherwise healthy individuals. 
+
+Future Directions and considerations
+Rather than definitely determining the effects of phase and the conditioning dose, we instead suggest that our results warrant further, in-depth exploration of activity-dependent stimulation for rehabilitation purposes. We demonstrate here that connectivities can be modified on short time scales in-vivo with humans, but future work should more robustly quantify the duration of the effects and the extent to which these results couple to functional recovery. Questions remain regarding what the optimal closed loop paradigm in humans would be. 
+
+Acknowledgements:
+The content is solely the responsibility of the authors and does not necessarily represent the official views of the National Institutes of Health.
+
+We appreciate the selfless generosity of our research participants, without whom this research would not be possible. 
+
+This work was facilitated through the use of advanced computational, storage, and networking infrastructure provided by the Hyak supercomputer system and funded by the STF at the University of Washington.
+Code and data availability:
+Code is available at the following github repository. 
+https://github.com/davidjuliancaldwell/betaOscillationTriggerStimPaper.git
+
+Requirements: 
+MATLAB (>2014b, optimization toolbox) 
+R
+
+Data is available at the following URL
+(Will be posted once finalized at a permanent web address through UW libraries)
+Funding:
+NIH R01 NS065186
+K12 2K12HD001097
+5U10NS086525
+5T90DA03243602
+NSF EEC-1028725.
+1T32CA206089-01A1 
+WRF Fund for Innovation in Neuroengineering
+NSF IIS-1514790
+
+\renewcommand{\tabcolsep}{1pt}
+\renewcommand{\arraystretch}{0.7}
+\begin{table}[ht]
+	\scriptsize
+	\begin{tabularx}{\textwidth}{@{}lllllXX@{}}
+		\toprule
+		Subject & Current (mA) & Phases set to be delivered & Age & Gender & Grid side and location & Reason for failure \\
+		\midrule
+SS1 & Unknown & Unknown & 42 & F & 48 channel right frontal & No evoked potentials recorded \\
+SS2 & 1.5 &	$90^{\circ}$ \newline $270^{\circ}$ & 39 & M & 48  channel left temporal/occipital & Seizure \\
+SS3 & 2 &	$90^{\circ}$ \newline $270^{\circ}$ & 25 & M & 64 channel right side grid & Possible abnormal anatomy due to schizencephaly \\
+		\bottomrule		
+	\end{tabularx}
+	\caption[Supplemental Subject Demographics]{Subjects (SS, supplementary subjects) for whom beta-oscillation triggered stimulation was attempted, but not successfully completed or carried out.}
+	\label{table:betaStimSubjSuppl}
+\end{table}
+
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/betaTriggered/betaStimOscopeTest}
+	\caption[Example one layer fit]{Oscilloscope test of real time filter: A pure sinusoidal signal generated at frequencies between 12 and 20 Hz was fed into an oscilloscope, as well as our hardware and closed loop processing chain. We triggered stimulation on the TDT, and fed the stimulation into the oscilloscope. We subsequently calculated the phase difference, and delay in milliseconds, at each sinusoidal frequency, between the ideal and actual phase of stimulation. The IIR nature of our real time filter can be seen due to the non-linear changes in phase.  
+	}
+	\label{fig:betaStimOscopeTest}
+\end{figure}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/betaTriggered/beta_filt1}
+	\caption[Real time tracking of triangular waveform]{Generated triangular waveform fed through TDT processing chain and band pass filtering. High amplitude signal around 9.7e4 ms represents a “null” trial condition where no stimuli are supposed to be delivered, while the higher amplitude signal beginning around 9.9e4 ms represents conditioning stimuli set to be delivered on the peak of the beta filtered signal. Black vertical lines indicate start of stimulation trigger, and subsequent blanking of the signal before bandpass filtering. Distortion immediately after black vertical line indicates effect of blanking the signal before bandpass filtering. 	}
+	\label{fig:betaStimTriangular}
+\end{figure}
+
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/betaTriggered/betaStimBrainsAppendix}
+	\caption[Additional cortical reconstructions]{Cortical reconstructions of the three subjects in supplementary table 1 not included in analysis (did not complete study protocol	}
+	\label{fig:betaStimBrainsAppendix}
+\end{figure}
+Baseline CEPs
+
+Subject 1
+
+Subject 2
+
+
+Subject 3
+
+
+Subject 4
+
+
+Subject 5
+
+Subject 6
+
+
+
+Supplementary Figure 4a-f - Average baseline CEP maps across subjects. Pink channels represent stimulation channels. Brown represents the Beta-recording channel. Gray channels represent all other channels. Scale bar in the lower right applies to all subplots within the image. We are unable to simultaneously record and stimulate from the stimulation channels, so any signal visualized there should be disregarded. 
+
+Random Beta filtered signals
+
+
+Supplementary Figure 5: Randomly selected real-time filtered conditioning trains For each subject and condition where the beta-filtered channel was continuously recorded, we randomly sub-selected 4 beta bursts with greater than 5 conditioning stimuli delivered to assess the degree of retriggering in our experiment. Time 0, as well as the red line, indicates the time of stimulus delivery. Individual colored lines indicate trials within a beta-burst, while the thicker black line indicates the average waveform at the time. 
+
+
+
+
+
+Supplementary Figure 6: Example of real time beta filtering, stimulation, and blanking- Example filtered beta-oscillatory signal from the real time filtering and decision algorithms. The red lines indicate time of delivery for the conditioning pulses, and the black lines indicate test pulses. Test pulses that were <250 ms after the end of a beta burst were considered probe pulses for that beta burst condition, and pulses greater than 2 seconds away from the end of a beta burst were baseline pulses. The shaded regions represent the null condition, where the beta RMS was exceeded, but no stimuli were delivered as one of the controls. 
+
+Burst Histograms
+
+
+\section{Related publications and presentations}
+
+\noindent Olson JD*, Caldwell DJ*, Wander JD,  Zanos S, Sarma D, Su D, Cronin JA, Collins K, Wu J, Casimo K, Johnson L, Buckley R, Richardson A, Weaver K, Fetz E, Rao, RPN, Ojemann JG, “Dose dependent enhancement of Cortico-Cortical Evoked Potentials during Beta-Oscillation Triggered Direct Electrical Stimulation” - in preparation\\
+\medskip
+
+\noindent Caldwell DJ, Olson JD, Wander JD,  Zanos S, Sarma D, Su D, Cronin J, Collins K, Wu J, Johnson L, Weaver K,  Casimo K, Fetz E, Rao RPN, Ojemann JG, “Exploration of the phase and dose dependence of cortico-cortical evoked potentials during beta-oscillation triggered direct electrical stimulation in humans”, Society for Neuroscience – Annual Meeting, San Diego, CA, November 2016 \\
+\medskip
+
+\noindent Caldwell DJ, Olson JD, Wander JD,  Zanos S, Sarma D, Su D, Cronin J, Collins K, Wu J, Johnson L, Weaver K, Fetz E, Rao RPN, Ojemann JG, “Enhancement of Cortico-Cortical Evoked Potentials by Beta-Oscillation Triggered Direct Electrical Stimulation in Humans”, NANS-NIC Meeting, Baltimore, MD, June 2016\\
+\medskip
+
+\noindent Caldwell DJ, Olson JD, Wander JD, Zanos S, Sarma D, Su D, Cronin J, Collins K, Johnson L, Weaver K, Fetz E, Rao RPN, Ojemann JG, “Effect of distance on the magnitude and timing of Cortico-Cortical Evoked Potentials in oscillation triggered direct electrical stimulation in humans”, Neurofutures Meeting, Seattle, WA, June 2016 \\
+\medskip 

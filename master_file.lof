@@ -1,0 +1,50 @@
+\addvspace {5\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Experimental protocol}}{12}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces BCI cortically driven closed loop stimulation.}}{15}
+\addvspace {5\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Subject implanation, cortical reconstruction, and electrode registration}}{22}
+\addvspace {5\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces What is the resistance of the human brain?}}{26}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Stimulation electrode locations}}{28}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Data extraction}}{31}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Data quality}}{32}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Individual stimulation monitor output}}{36}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Average stimulation monitor output}}{37}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Constant current stimulation}}{38}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Jump voltages over time all subjects}}{39}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Recorded voltage over time}}{40}
+\addvspace {5\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Example of linear interpolation}}{49}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Detected clusters for an example channel}}{50}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Processing pipeline and subsequent time-frequency analysis for an example channel}}{51}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Multiple electrode time series following stimulation extraction.}}{52}
+\addvspace {5\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Experimental protocol}}{75}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Experimental progression by subject}}{76}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Comparison of reaction times for four subjects and their DCS electrodes.}}{78}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Comparison of the two blocked sessions for three subjects.}}{79}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Example electrical short circuit and digital touch probe signal traces. }}{79}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Distribution of onset delays.}}{81}
+\addvspace {5\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Experimental overview of modifications to waveforms to test reaction times}}{84}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Time series evoked potentials comparing haptic and DCS conditions. }}{87}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Example analysis highlighting the similarities and differences in the time and frequency domain from both haptic and DCS conditions.}}{88}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Modified waveform - first subject}}{89}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Modified waveform - second subject}}{89}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Time series differences between trains with and without leading high pulses following artifact processing. }}{90}
+\addvspace {5\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Overview of concurrent haptic and DCS.}}{93}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Results of temporal order judgement task}}{94}
+\addvspace {5\p@ }
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Experimental Paradigm and Example Electrode Locations}}{106}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Characteristic Cortically Evoked Potentials and Stimulation Pulse }}{132}
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Subject cortical reconstructions}}{133}
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Combined subject CEP modulation}}{134}
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Example one layer fit}}{135}
+\contentsline {figure}{\numberline {8.6}{\ignorespaces Real time tracking of triangular waveform}}{136}
+\contentsline {figure}{\numberline {8.7}{\ignorespaces Additional cortical reconstructions}}{136}
+\addvspace {5\p@ }
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Paired pulse screening protocol}}{139}
+\contentsline {figure}{\numberline {9.2}{\ignorespaces Different Paired Pulse Conditioning Protocols}}{140}
+\addvspace {5\p@ }
+\addvspace {5\p@ }

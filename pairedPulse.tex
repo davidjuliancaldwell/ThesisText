@@ -1,0 +1,70 @@
+ 
+% ========== Chapter on paired pulse stimulation
+ 
+\chapter {Paired pulse conditioning paradigms for in-vivo plasticity induction in humans}
+
+
+Appropriately timed stimulation protocols can induce plasticity changes in cortex. The best parameters to elicit measurable changes in cortical excitability, with potential positive functional rehabilitation outcomes, are unknown. Both animal work, as well as theoretical modeling, need to be translated to humans. Here we implement paired pulse conditioning paradigms with different parameters in a human, intraoperative setting to induce changes in cortical plasticity. The key parameters tested are the use of paired bipolar pairs, as well as single bipolar pairs, as well as time lags ranging from 25 ms to 200 ms between conditioning pulses. We assess excitability changes through measuring cortically evoked potentials (CEPs). We perform these conditioning experiments in patients with both Essential Tremor and Parkinson’s disease, and under varying states of anesthesia. We note minimal impact within a subject on cortical excitability during different levels of anesthesia, suggesting that intraoperative CEP paradigms reveal meaningful connectivity patterns that could translate to neuroprosthetics in awake individuals. We observe a trend towards conditioning paradigms with 200 ms delays resulting in greater degrees of change than 25 ms conditions, and a trend towards paired stimulation between sites being more effective than single site stimulation. Additionally, we observe statistically significant changes in excitability in some patients, and not others. These results speak to the complex network dynamics affected by cortical stimulation at the length scale of clinical iEEG electrodes, as well as the area depolarized by direct cortical stimulation. 
+
+\section{Introduction}
+
+A potential protocol to induce plasticity between regions is paired pulse stimulation. This technique has been shown in rodent models with micro-stimulation to drive changes in plasticity in sensorimotor cortex \cite{Rebesco2010}. Recently, this work has been extended into a primate model \cite{Seeman2017}. A key advantage of this method is the simplicity of hardware programming that would be required for implementation, as the only requirements are the delivery of stimuli to two sites with a consistent, known delay. Demonstration of this protocl 
+
+
+\section{Methods}
+
+\subsection{Electrode Strips}
+We used the ECoG electrodes placed intraoperatively with 8 contact electrode strips, with 10 mm spacing between electrodes (Ad-tech Medical, Racine, WI), and either 1.8 mm or 2.3 mm diameter exposed platinum contacts. These electrodes were placed by the neurosurgeon via a burr hole using standard techniques. The ECoG strip was removed at the end of surgery
+
+\subsection{Recording and Stimulation}
+We used the Tucker-Davis Technologies (TDT, Alachua, Fl) hardware suite for recording and stimulation (Model RZ5D digital signal processor/ controller, PZ5-128 channel biosignal amplifier, IZ2H-16 channel stimulator, and the LZ48-400 battery pack) controlled with a PC running the proprietary TDT software suite.  We recorded raw neural data at 12207 Hz to resolve short-latency signal components and for artifact suppression. We employed a constant-current stimulation mode, which delivered voltage to meet a given current requirement. Our pulse duration ranged from 200 $\mu s$ to 1000 $\mu s$ for each phase of our biphasic, bipolar rectangular pulse stimulation. 
+
+\subsection{Screening}
+
+Patients undergoing DBS surgery have an 8 contact ECOG strips placed intraoperatively during surgery. In a subset of patients, we located the central sulcus, and corresponding sensory and motor regions using somatosensory evoked potential. We then test bipolar stimulation pairs in sensory, motor, and premotor cortex to elicit EPs in adjacent contacts (Figure \ref{fig:pairedPulseScreening}). Once we find a pair (site A) that reliably elicits EPs in a different electrode, we consider this to be the location from which we are trying to drive plasticity. 
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/pairedPulse/pairPulseScreening}
+	\caption[Paired pulse screening protocol]{The first step in the paradigm is localization of sensory cortex via phase reversal through SSEP testing. The next is assessing baseline cortical excitability through EP screening, and subsequent EP testing at four different amplitude levels}
+	\label{fig:pairedPulseScreening}
+\end{figure}
+
+\subsection{Conditioning and Testing}
+Once EPs have been localized, we proceed to a paired pulse conditioning paradigm, inspired by Seeman et al. 2017. We apply 3 pulses at 330 Hz in 2 Hz intervals to both site A and site B, with site A leading site B stimulation by 25 or 200 ms (Figure \ref{fig:pairedPulseConditioning}). We carry out the conditioning for between 5 and 20 minutes, depending on operating room constraints.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figures/pairedPulse/pairPulseConditioning}
+	\caption[Different Paired Pulse Conditioning Protocols]{The first step in the paradigm is localization of sensory cortex via phase reversal through SSEP testing. The next is assessing baseline cortical excitability through EP screening, and subsequent EP testing at four different amplitude levels}
+	\label{fig:pairedPulseConditioning}
+\end{figure}
+
+
+In the second set of experiments, we will condition Site A and Site B with a lag of 100 ms following Site A and Site B , which as mentioned above, should not result in facilitation of responses as a control. If possible with time constraints, we will carry out the same conditioning paradigm, except with stimulation at site B leading stimulation at site A by 25 ms with the same stimulation parameters as mentioned above. This hypothetically will result in LTD, but from the primate work, it would not be expected to be a robust effect. We will then test MEPs and EPs again at both sites A and B. 
+
+One concern is the fact that our potential patients are under anesthesia during DBS electrode implantation, ECoG strip placement, and recording. However, from prior animal work, we expect the MEP results from the anesthetized subjects to be applicable to our human patients (Sykes 2016). Additionally, the clinical team will attempt to keep the depth of anesthesia low to minimize reductions in cortical excitability. 
+
+\subsection{Data Analysis}
+
+We discard any peak-to-peak values with magnitudes below 25 $ \mu V $ or above 1500 $ \mu V $. 
+
+
+\section{Results}
+
+In one Essential Tremor patient brought in and out of anesthesia during evoked potential measurement, we observed no statistically significant changes in the peak-to-peak magnitude of the EPs during different levels of anesthesia induction (Figure ???). This suggests that EPs elicited during anesthesia would be transferable to those in an awake state, suggesting that intraoperative EP screening during neuromodulation device placement could be informative for 
+
+\section{Discussion}
+
+\section{Conclusions}
+
+For the first time in humans, we measure intraoperative cortically evoked potentials (CEPs, or EPs), which are a marker of cortical excitability and connectivity, during DBS surgery.
+We observe the greater density of intraoperatively measured responses in premotor/motor/sensory cortices. 
+We are able to modulate CEPs with paired-pulse conditioning protocols.
+In contrast to previous primate literature, we observe greater potentiation at longer delays between stimulation sites, suggesting that the mechanisms responsible are less dependent on spike-timing dependent plasticity and rather on larger network scale phenomena due to the scale of our stimulation electrodes and larger areas of cortex targeted.
+EP magnitudes during various levels of responsiveness do not change, suggesting that intraoperative screening for EPs could be illustrative of connectivity during awake states. 
+We observe a greater effect of conditioning with longer conditioning protocols, suggesting there is a total stimulation dosage effect. 
+These studies further our understanding of plasticity induction in humans, and pave the way for future exploration of how to enhance cortical connections in a rehabilitation context following neurological damage from diseases such as stroke. 
+
+
+\section{Supplemental Information}

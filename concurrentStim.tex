@@ -1,0 +1,57 @@
+ 
+% ========== Chapter on TOJ
+ 
+\chapter {Aim 2.3: The behavioral and neural effects of temporally simultaneous and spatially overlapping haptic stimuli and DCS}
+
+\section{Introduction}
+
+The results from Aim 2.1 motivate the study of what happens when DCS and haptic feedback are applied concurrently, which will be of critical importance for neuroprosthetics in the real world where natural and artificial feedback will arrive concurrently. We know from our prior results that there is a significant temporal delay in processing and responding to DCS relative to haptic touch, but what are the interference effects of one modality on the other? Can both be perceived simultaneously, and how do they interact to affect both behavior and neuronal processing?  
+
+One way to assess these interactions is through a temporal order judgement (TOJ) task, where two stimuli are presented in close temporal relation to one another, and subjects are asked to judge which arrived first \cite{Miyazaki2016}. Combinations of stimuli modalities can be presented, such as audio, visual, and tactile stimuli. This task lends insight into the processing of related events, which is critical for interpreting the sensory information arriving from a changing world. How would humans respond to tactile information arriving simultaneously from two overlapping, yet different modalities such as DCS and haptic touch? 
+
+While the cortical processing of simultaneous events occurs remains largely unexplored, recent clues from fMRI work point to the left ventral, bilateral dorsal premotor cortex, and left posterior parietal cortex for areas of activation specific to a temporal order judgement task. These areas are known to be part of the motor and perception temporal prediction network \cite{Miyazaki2016}. Furthermore, the bilateral premotor cortices, the bilateral middle frontal gyri, the bilateral inferior parietal cortices and supramarginal gyri, and the bilateral posterior part of the superior and middle temporal gyri all were shown to be preferentially activated in a TOJ task compared to a numerosity task, as assessed by fMRI \cite{Takahashi2013}. The authors note that a limitation of this study was the fact that the task involved judging stimulation to two hands, rather than a single spatial location as we will perform in our ECoG patients.
+
+Therefore, inspired to address hypotheses regarding potential masking effects of temporally and spatially overlapping stimuli, and guided by fMRI insight into the locations which are activated during tactile temporal order judgement tasks, we seek to elucidate the behavioral and neural results of stimulating with both haptic and DCS stimuli concurrently. 
+
+\section{Experimental design and analysis methods}
+
+We provide haptic stimulation through digital touch probes to the same cutaneous region where sensation was perceived during DCS of S1 hand cortex, as described in the general methods. DCS is applied in close temporal proximity to natural haptic touch with varying time lags (Figure \ref{fig:concurrentStimOverview}). We first run a block of the response timing task (Aim 2.1), and we then calculate the latency of response between haptic and DCS conditions. We then present a distribution of lags (stimulus onset asychrony, SOA) between the DCS and haptic conditions centered around this particular latency with the subject blindfolded. Our first subject was asked after each trial which stimulus was perceived first, and also responded via button press to stimulus onset. The first subject was also given a third option (“same”), for conditions where they were unable to say which came first. This is called a “ternary-response task”, but due to potential subject variability in assessing the threshold for “same”, we will focus slowly on TOJ tasks for the subsequent subjects \cite{Spence2010}. The second subject was asked to respond via button press, say which came first, and give a confidence rating (1-5) on how confident they were in which came first. We then analyze the response times on each trial based off of the first stimulus presented (either haptic or DCS).
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/concurrentStim/TOJ_experiment}
+	\caption[Overview of concurrent haptic and DCS.]{Subjects receive DCS and haptic touch to the same location with differing degrees of lag between the two stimuli. They are asked both to respond via button press, as well as describe which stimulus came first. 
+	}
+	\label{fig:concurrentStimOverview}
+\end{figure}
+
+\section{Existing results}
+Only in trials where haptic touch trailed DCS by over 200 ms did the first subject reliably perceive DCS as arriving first. From haptic touch trailing DCS by 200 ms to approximately both arriving concurrently, there was ambiguity in the subject’s perception of which stimulus arrived first (Fig. \ref{fig:TOJresults}, left). As previously seen, responses to DCS (when perceived first) were slower than trials when haptic was perceived first (Fig. \ref{fig:TOJresults}, right). The subject described perception of both sensations as distinct in all conditions, indicating that perception of both stimuli was not masked by simultaneous application.
+
+This suggests there is a range of latencies for which overlapping spatial and temporal DCS and natural stimuli are perceived as arriving simultaneously. This has implications for future brain-computer interfaces, where both cortically-delivered feedback and natural feedback may arrive synchronously. Furthermore, our results demonstrate that spatially and temporally overlapping natural feedback and DCS can be isolated as distinct sensations.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1\textwidth]{figures/concurrentStim/TOJ_a1355e_both_calculatedSame_v2}
+	\caption[Results of temporal order judgement task]{With DCS delivered before haptic stimulation with a range of time deliveries from 400 ms to -200 ms, all trials were distinctly perceived as DCS arriving first. Between -200 ms and 25 ms, with 25 ms representing DCS onset 25 ms after haptic touch onset, the subject reported the stimuli arriving at approximately the same time. With DCS arriving between 75 ms to 150 ms after haptic touch, the subject always reported perceiving haptic touch first (Left panel). The plot shows a distribution of response times, where following a Kruskal-Wallis test and Nemenyi’s multiple comparisons test, the haptic touch condition stochastically dominates the DCS condition, consistent with our previous results that haptic touch results in faster reaction times than DCS (right panel).}
+	\label{fig:TOJresults}
+\end{figure}
+
+\section{Future analysis and expected results}
+
+We will fit cumulative distribution gaussian fits to the proportion of trials responded to for each condition as a function of the SOA. From here, we will calculate the just noticeable difference (JND) as half of the temporal interval between the 25\% and 75\% points on the curve fit, and the point of subjective simultaneity (PSS) as the midpoint of the distribution. The JND provides information about how sensitive the subjects are to asynchrony, while the PSS informs the SOA where trials would be judged with equal probability as either type \cite{Miyazaki2016}. 
+
+We expect to see trials confidently reported as DCS first where the SOA is bounded by the response time difference between DCS and haptic touch, and as haptic touch first with SOAs of 0 and greater. 
+
+We will continue analyzing the neural data, as informed by our prior work in Aims 1.2, 2.1, and 2.2. We will assess broadband gamma power, early and late ERP peaks, as well as time frequency plots. We will average our neural data recordings on both DCS onset, haptic onset, and response onset, to see which neural features are most specific for each condition. 
+
+Based off of the reported ability to perceive both modalities independently, we expect to see ERPs and broadband activity representative of the individual stimuli when the analysis is centered on the presentation of each of the stimulus modalities. 
+
+From the fMRI literature, we expect to robust broadband gamma activation in the left ventral, bilateral dorsal premotor cortex, and left posterior parietal cortex for areas of activation specific to a temporal order judgement task. Additional regions to analyze will include the bilateral middle frontal gyri, the bilateral inferior parietal cortices and supramarginal gyri, and the bilateral posterior part of the superior and middle temporal gyri. We expect to observe significant changes as assessed in broadband gamma activity in these regions during the temporal order judgement task relative to a simple response timing task. 
+
+\section{Related publications and presentations}
+
+Caldwell DJ, “Behavioral and neural differences between haptic stimulation and direct cortical stimulation in humans: implications for neuroprosthetics”, 7th International BCI Meeting, Workshop: Perception of Sensation Restored through Neural Interfaces, Asilomar, CA, May 2018
+
+
+
