@@ -18,9 +18,7 @@ We compare our measurements with two simple models and find qualitative agreemen
 
 Because the resistivity values of the three components are different, the value of the resistivity that you measure will depend on the electrode locations. For example, if the electrodes are very small and very close together and inside a single component of the brain, then you will measure the resistivity of that component. However, we have been unable find any published measurements that satisfy these conditions. This means that all such measurements will report an apparent resistivity which is a weighted average over the regions where the stimulation current flows.
 
-We present our analysis of the data that we have collected on the direct electrical stimulation (DES) of human brains in vivo with the goal of providing insight into the apparent resistivity on the macroscopic scale. The volume of resistive material that is probed depends on the geometry of the electrodes used. As our minimum electrode spacing is one centimeter, we probe the resistivity on the centimeter and larger length scale.
-
-We were surprised by how well our data can be described by a simple analytic model for a resistive volume conductor. We were further surprised that we can fit our measurements without including the detailed anatomy. Due to the size of our electrode arrays compared to the size of the brain, our measurements probe the apparent resistivity rather than the true resistivity. This is because the brain is not a simple homogeneous medium. Because of this, the apparent resistivity that we measure, and that all previous in vivo studies have measured, depends on the anatomy and on  the resistivity of the three components (cerebrospinal fluid (CSF), gray matter, and white matter). We here focus on analyses considering the brain as a medium with an apparent resistivity (Figure \ref{fig:mrModelingOverview})). 
+We present our analysis of the data that we have collected on the direct electrical stimulation (DES) of human brains in vivo with the goal of providing insight into the apparent resistivity on the macroscopic scale. The volume of resistive material that is probed depends on the geometry of the electrodes used. As our minimum electrode spacing is one centimeter, we probe the resistivity on the centimeter and larger length scale. Due to the size of our electrode arrays compared to the size of the brain, our measurements probe the apparent resistivity rather than the true resistivity. This is because the brain is not a simple homogeneous medium. Because of this, the apparent resistivity that we measure, and that all previous in vivo studies have measured, depends on the anatomy and on  the resistivity of the three components (cerebrospinal fluid (CSF), gray matter, and white matter). We here focus on analyses considering the brain as a medium with an apparent resistivity (Figure \ref{fig:mrModelingOverview})). 
 
 
 \begin{figure}[ht]
@@ -30,14 +28,115 @@ We were surprised by how well our data can be described by a simple analytic mod
 	\label{fig:mrModelingOverview}
 \end{figure}
 
-
-Although it would be straightforward to measure the resistivity of the individual components by using arrays that are sufficiently small (much smaller than the spatial extent of the component being measured), surprisingly no one has done so. We hope that such measurements will be made in the near future.
-
 Since Penfield, intraoperative awake DES has been used extensively to map the function of different brain regions \cite{Penfield1937}. The Montreal procedure developed by Penfield and his coworkers has been called the gold standard for mapping brain function \cite{Borchers2012}. In modern times, awake DES is routinely used to prevent resection of crucial brain areas during epilepsy surgery to remove the epileptic focus and analogously during brain surgery to remove tumors. Not surprisingly, there have been and still are, many attempts to improve on awake DES [???]. Nevertheless, clinically, it is still the gold standard.
 
-In epilepsy surgery, an electrocortiography (ECoG) grid is placed on the cortical surface and the patient is taken off of their anti-seizure medication. The location of the seizure focus is determined by analyzing the pattern of the seizure activity across the grid. Once the seizure focus has been located, the patients are put back on their anti-seizure medication. If they provide informed consent, there are typically one or two days when we can use the grid to try to understand the human brain. All of our ECoG data was acquired during this period.
+In epilepsy surgery, an electrocortiography (ECoG) grid is placed on the cortical surface and the patient is taken off of their anti-seizure medication. The location of the seizure focus is determined by analyzing the pattern of the seizure activity across the grid. Once the seizure focus has been located, the patients are put back on their anti-seizure medication. It is from these patients that we acquire our data.
 
-Our  patient population is summarized in Table \ref{table:mrSubjs}. The locations of their stimulation and recording electrodes are summarized in Figure \ref{fig:mrCompositeBrain}.
+Future applications of DES and DBS will include neuroprosthetic devices and brain-computer interfaces to enable users to interact with the physical and cyber world solely via brain signals. Most of the work towards brain-computer interfaces up until now has focused on reading signals from the brain to drive prosthetics or move a computer cursor.  In the future, precise control of prosthetics, and a richer user environment, will also require input into the brain from a prosthetic device. Direct electrical stimulation of the brain is just starting to be used to provide haptic feedback in humans \cite{Cronin2016a,Collins2016}, and previous work has demonstrated the efficacy of both cortical and peripheral stimulation to provide enhancements in brain computer interface performance \cite{Klaes2014,Dadarlat2015}.
+
+
+\section{Theory}
+
+This section summarizes the theory underlying resistivity measurements made using bulk samples. It contains the equations that we used to calculate our 2-point resistivity values and our 4-point resistivity distributions from our measured voltages.
+
+\subsection{Resistance Measurements Made on Bulk Samples}
+
+Resistance Measurements Made on Bulk Samples
+
+In resistance measurements on bulk samples, a voltage is applied to two contacts on the sample and the resulting current is measured, or vice versa. To convert the measured resistance into the resistivity of a homogeneous isotropic resistive sample, or into the apparent resistivity of an inhomogeneous isotropic resistive sample, requires the detailed spatial structure of the sample and the location of the electrodes. In the next sections, we first discuss the apparent resistivity, as well as the necessary equations for converting resistance measurements made on semi-infinite bulk samples and on spherical samples using 2-point measurements and 4-point measurements.
+
+
+\section{The apparent resistivity}
+For a half space composed of any number of uniform thickness and uniform resistivity layers, the equation for the voltage on the surface has the same form as that for the same electrode configuration on a uniform resistivity substrate with the value of the resistivity $\rho$ for the uniform resistivity substrate replaced by an apparent resistivity $\rho_a$. The apparent resistivity depends on the paths that the current takes, which depends on both the geometry and the resistivities of the various layers. It is the appropriate average over all paths. 
+
+Apparent resistivity is the basis for geological resistivity prospecting \cite{W.M.TelfordL.PGeldart1990}. For example, for a two-layer earth, when the electrodes are very close together, the current penetration is very shallow and the apparent resistivity is equal to the resistivity of the top layer. When the electrodes are very far apart, the current penetration is very deep and the apparent resistivity is equal to the resistivity of the bottom layer. In between, it is the appropriate average over the paths. The rule-of-thumb for a uniform resistivity substrate is that the $ 50 \%$ penetration depth is about one half of the spacing between the two stimulation electrodes. For geological resistivity prospecting, the separation between the current electrodes is varied and the apparent resistivity is measured. From these measurements, the composition versus depth can be determined.
+
+Because the brain is layered, any measurements of the resistivity of an intact living brain will measure an apparent resistivity unless the electrodes are very close together. In humans, the thickness of the gray matter is about 3.5 mm, so to measure the resistivity of the gray matter without seeing the white matter using a four-point probe would require the entire electrode array to be sub-millimeter in size. Our clinical ECoG grids have an electrode spacing of 1 cm. Consequently, the focus of this paper is on determining the apparent resistivity of the human brain on the macroscopic scale. In our measurements, there is an additional issue  due to the presence of CSF with unknown thickness between the clinical grid and the surface of the cortex during our measurements. 
+
+
+\subsection{Two-point measurements and electrode resistance}
+
+For a constant-voltage ohmic electrode on the surface of half-space of uniform resistivity material (with infinity held at zero potential), the steady-state voltage and current are related by Ohm’ss law $V=IR$ and the electrode resistance is defined to be $R=V/I$. For circular electrodes with radius $a$, the resistance is related to the resistivity of the material by $R=(rho/4a)$. For two identical well separated electrodes, the resistance between them is twice that for a single electrode $R_2=(rho/2a)$. These equations are routinely used to measure the resistivity of bulk semiconductors.
+
+However, because of the capacitance of metallic electrodes on the surface of the brain, the above relation does not apply under steady state conditions due to the time-dependent charging of the double-layer capacitance. However, it does apply under constant current pulse conditions before the electrodes start to charge. {ref 1} The measured time-dependent applied voltages that were used to produce constant current stimulation are shown in Figure 1. We determined the electrode resistances by extracting the voltage jump at the onset of the stimulation and dividing it by the applied current \cite{Huang2008a}.
+
+What happens as the two electrodes are brought together? Do the resistances still add? It turns out that in general they do not. This is because superposition does not apply to closely spaced constant voltage electrodes. The analytic solution to Laplace’s equation for multiple constant voltage electrodes on the surface of a half-space of uniform resistivity material is extremely complicated. The boundary conditions are mixed: constant voltage boundary conditions apply under the two electrodes and constant normal derivative (zero current) boundary conditions apply everywhere else on the surface. A pair of circular constant voltage electrodes separated by a center-to-center distance $d$ that is large compared to their radius $a$ can be well approximated by the standard formula of $R_2=(rho/2a)$, with an error of less than 0.1\% for our application. \cite{Kristiansson2005}.
+
+We calculated the apparent resistivity values for each subject using our measured electrode resistances by solving for $\rho$
+
+$$\rho = {2 a R \over A} $$
+
+\subsection{Two-Point Measurements Made on Homogeneous Spherical Samples}
+
+We were unable to find any analytic or numerical results for circular electrodes on a sphere, so we calculated the scale factor relative to the flat semi-infinite case using BEM [makarov] For 2.3 mm diameter platinum electrodes on a 6 cm radius uniform resistivity sphere we found the relationship between the resistivity and the measured resistance is given by
+
+rho=XaR.
+
+\subsection{Four-Point Measurements Made on Homogeneous Flat Bulk Samples}
+
+The four-electrode method is the gold standard for making resistivity measurements. For 4-point measurements on homogeneous isotropic flat bulk samples, the resistivity is related to the measured voltage difference between the two sense electrodes in terms of the current imposed between the two source electrodes by \cite{Miccoli2015}
+
+It's main advantage is that it is insensitive to inevitable variations in the contacts. For example, since our surfaces are not flat, the effective contact area can be smaller than the actual area of the
+contact. When this happens or the region under the contact is inhomogeneous, the contact resistivity will not be equal to $2aR$. However, by using constant current stimulation and measuring away from the stimulation electrodes, the voltages on the recording electrodes will be correct. They do not depend on the contact area. This is why the point electrode model works for our measurements.
+
+
+$ V = (I rho / 2 pi) [ (1/r_1 - 1/r_2) - (1/r_3 - 1/r_4) ] $
+
+where $r_1$ is the distance from the first source electrode to the first sense electrode,$ r_2 $is the distance from the second source electrode to the first sense electrode,$ r_3 $is the distance from the first source electrode to the second sense electrode,$ r_4 $is the distance from the second source electrode to the second sense electrode,
+
+I is the current, and rho is the resistivity.
+
+The most often used electrode configurations are linear and square. For finite size samples, there are correction factors that depend on the electrode configuration, spacing, and location and on the size and shape of the sample. In addition to the bulk equation above, there are well known results in the literature for parallelepipeds, disks, and cylinders that include the size and shape factors.
+
+\subsection{Four-Point Measurements Made on Homogeneous Spherical Samples}
+
+The relationship between the voltage measured between two sense electrodes on the surface of a sphere and the current imposed between two source electrodes on the surface of the sphere was first worked out in a remarkable, now classic paper by Helmholtz in 1859 \cite{Wilson1950}. It is given by \cite{Frank1952}
+
+$$ V = (I rho / 4 pi) [ 2/rb -2/ra + (1/R) ln {ra+R-a cos(beta) / rb+R-b cos(theta)} $$ Frank’s eqn 12
+
+where blah, blah, blah
+
+you should probably include a drawing of the geometry—doesn’t that sound fun?
+
+Two-Point Measurements Made on Inhomogeneous Flat Bulk Samples
+
+For the special case of 4-point measurements on inhomogeneous isotropic flat bulk samples composed of parallel layers with constant resistivity values, the apparent resistivity that will be measured can be calculated in terms of the resistivity values, the thicknesses, and the arrangement of the layers. This relationship is the basis of vertical electrical sounding used to determine the geological layering underneath the surface of the earth [Geological Survey Professional Paper 499] and of the 2-point and 4-point characterization of the layering of semiconductor materials [NBS Special Publications 400-10 and 400-48 and Ehrstein]. The apparent resistivity is the ratio of the measured resistivity divided by the resistivity that would be measured for the same structure if it were homogeneous and isotropic with a resistivity equal to unity. However, the structure of the brain under our clinical ECoG grids does not consist of parallel layers with constant resistivity values so we simply present the distribution of apparent resistivity values that we measure.
+
+\subsection{Four-Point Measurements Made on Inhomogeneous Spherical Samples}
+
+There have been many models of the brain made using concentric spheres with constant resistivity values. However, the structure of the brain under our clinical ECoG grids does not consist of concentric spheres with constant resistivity values
+
+so we simply present the distribution of apparent resistivity values that we measure.
+
+The Ehrstein chapter is in $ https://link.springer.com/chapter/10.1007/978-1-4757-1352-7_1 $
+%
+%\section{Theory for the statics and dynamics of ECoG electrodes}
+
+%How should the static and dynamic behavior of the ECoG electrodes be modeled?
+%Three primary static models exist and have been used extensively in the literature: point electrodes, finite-size constant voltage electrodes, and finite-size constant current electrodes.  Point electrodes have been widely used in georesistivity studies and are natural there because the electrode separations are much greater than the electrode dimensions. Both constant voltage and constant current stimulation is used clinically. At short times, ECoG electrodes are predicted to act like constant voltage sources; after a few time constants, they are predicted to act like constant current sources [???]. In the constant voltage regime, the current density under the electrode is sharply peaked at the edge of the electrode \cite{Wiley1982}. In the constant current regime, the current density under the electrode is uniform.
+%
+%There are exact closed-form solutions for the voltage on the surface of a homogeneous isotropic resistive half-space in the literature for all three models.
+%All three models are often represented using Fourier-Bessel expansions (See appendix ???).The calculated voltage distributions are shown in figure ???. Note that at the distance of even our nearest recording electrodes relative to the stimulation electrodes, they all look like point sources. Asymptotically (beyond one cm) all of the curves decay in a matter similar $1/r$, with the precise fall off depending on the particulars of problem geometry. Physically, this is because the electrode looks like a point once you are far enough away from it. This explains why the point source model fits our data so well.
+%
+%For point electrodes on the surface of a half space with uniform resistivity, the voltage everywhere on and inside the sample is given by:
+%
+%$$V(r) = \bigg( {\rho \; i_0  \over 2 \pi} \bigg) \ {1\over r}$$
+%
+%\noindent where $i_0$ is the current that is injected at the electrode and removed at infinity, $\rho$ is the resistivity of the half space, and $r$ 
+%is the distance between the current source and the point where the voltage is measured. This is the voltage measured relative to infinity which is defined to be at zero potential.
+%
+%For a pair of constant current point electrodes on the surface of a half space with uniform resistivity, the voltage everywhere on the surface is given by superposition
+%
+%$$V(r) = \bigg( {\rho \; i_0  \over 2 \pi} \bigg) \ \bigg[ {1\over r_+} -  {1\over r_-} \bigg]$$
+%
+%\noindent here $r_+$ is the distance between the positive current source and the point where the voltage is measured, and
+%$r_-$ is the distance between the negative current source and the point where the voltage is measured. Again this voltage is measured relative to infinity. We use this equation to analyze our data. For point electrodes on the surface of a half space with uniform resistivity, the apparent resistivity $\rho_a$ is equal to the true resistivity $\rho$. For multilayer systems, the apparent resistivity $\rho_a$ is not equal to the true resistivity $\rho$. This is used to obtain information about the
+%resistivity of the layers.
+\section{Methods}
+
+\subsection{Patient Characteristics}
+
+Our patients were implanted with electrode grids for Our  patient population is summarized in Table \ref{table:mrSubjs}. The locations of their stimulation and recording electrodes are summarized in Figure \ref{fig:mrCompositeBrain}.
 
 \begin{figure}[ht]
 	\centering
@@ -89,26 +188,6 @@ Our  patient population is summarized in Table \ref{table:mrSubjs}. The location
 \end{table}
 
 
-
-Future applications of DES and DBS will include neuroprosthetic devices and brain-computer interfaces to enable users to interact with the physical and cyber world solely via brain signals. Most of the work towards brain-computer interfaces up until now has focused on reading signals from the brain to drive prosthetics or move a computer cursor.  In the future, precise control of prosthetics, and a richer user environment, will also require input into the brain from a prosthetic device. Direct electrical stimulation of the brain is just starting to be used to provide haptic feedback in humans \cite{Cronin2016a,Collins2016}, and previous work has demonstrated the efficacy of both cortical and peripheral stimulation to provide enhancements in brain computer interface performance \cite{Klaes2014,Dadarlat2015}.
-
-There are several ways that the anatomy determines the apparent resistivity.
-One is due the the different resistivities of the three components.
-Another is due to the layer-like structure.
-A third is due to the overall shape and size of the brain.
-We consider two models for the shape: flat and spherical.
-We also consider finite size effects.
-
-
-
-\section{The apparent resistivity}
-For a half space composed of any number of uniform thickness and uniform resistivity layers, the equation for the voltage on the surface has the same form as that for the same electrode configuration on a uniform resistivity substrate with the value of the resistivity $\rho$ for the uniform resistivity substrate replaced by an apparent resistivity $\rho_a$. The apparent resistivity depends on the paths that the current takes, which depends on both the geometry and the resistivities of the various layers. It is the appropriate average over all paths. 
-
-Apparent resistivity is the basis for geological resistivity prospecting \cite{W.M.TelfordL.PGeldart1990}. For example, for a two-layer earth, when the electrodes are very close together, the current penetration is very shallow and the apparent resistivity is equal to the resistivity of the top layer. When the electrodes are very far apart, the current penetration is very deep and the apparent resistivity is equal to the resistivity of the bottom layer. In between, it is the appropriate average over the paths. The rule-of-thumb for a uniform resistivity substrate is that the $ 50 \%$ penetration depth is about one half of the spacing between the two stimulation electrodes. For geological resistivity prospecting, the separation between the current electrodes is varied and the apparent resistivity is measured. From these measurements, the composition versus depth can be determined.
-
-Because the brain is layered, any measurements of the resistivity of an intact living brain will measure an apparent resistivity unless the electrodes are very close together. In humans, the thickness of the gray matter is about 3.5 mm, so to measure the resistivity of the gray matter without seeing the white matter using a four-point probe would require the entire electrode array to be sub-millimeter in size. Our clinical ECoG grids have an electrode spacing of 1 cm. Consequently, the focus of this paper is on determining the apparent resistivity of the human brain on the macroscopic scale. In our measurements, there is an additional issue  due to the presence of CSF with unknown thickness between the clinical grid and the surface of the cortex during our measurements. 
-
-
 \section{Data Acquisition}
 
 Our data was acquired at 12 kHz using a TDT System 3 with a RZ5D and PZ5 Neurodigitizer (Tucker Davis Technologies, Alachua, Florida, USA). We delivered biphasic, bipolar, constant current stimulation stimulation pulses using a TDT IZ2H-16 stimulator and a LZ48-400 battery pack. The length of each phase was 1.2 msec. The voltage delivered to the stimulation electrodes during constant current stimulation was also measured using the TDT. 
@@ -119,7 +198,7 @@ To calculate the resistivity values, we developed an algorithm to extract the qu
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.95\textwidth]{figures/macroscopicResistivity/stimulation_extraction}
+	\includegraphics[width=0.5\textwidth]{figures/macroscopicResistivity/stimulation_extraction}
 	\caption[Data extraction]{The magnitude of the stimulation artifact for each recording electrode was determined by fitting the flat regions during the positive and negative phases of the bipolar biphasic stimulation pulses. This minimized the edge transients.}
 	\label{fig:mrStimExtraction}
 \end{figure}
@@ -132,48 +211,6 @@ The means and standard deviations for the recorded voltages for our subjects are
 	\caption[Data quality]{The means and the standard deviations of the magnitudes of the stimulation artifacts for the first seven subjects plotted versus the electrode number. The blue and green lines indicate the stimulation electrodes. The stimulation artifact was not measured at the stimulation electrodes. Note the reproducibility of the measurements.}
 	\label{fig:mrMeansStandards}
 \end{figure}
-
-
-\section{Theory for the statics and dynamics of ECoG electrodes}
-
-How should the static and dynamic behavior of the ECoG electrodes be modeled?
-Three primary static models exist and have been used extensively in the literature: point electrodes, finite-size constant voltage electrodes, and finite-size constant current electrodes.  Point electrodes have been widely used in georesistivity studies and are natural there because the electrode separations are much greater than the electrode dimensions. Both constant voltage and constant current stimulation is used clinically. At short times, ECoG electrodes are predicted to act like constant voltage sources; after a few time constants, they are predicted to act like constant current sources [???]. In the constant voltage regime, the current density under the electrode is sharply peaked at the edge of the electrode \cite{Wiley1982}. In the constant current regime, the current density under the electrode is uniform.
-
-There are exact closed-form solutions for the voltage on the surface of a homogeneous isotropic resistive half-space in the literature for all three models.
-All three models are often represented using Fourier-Bessel expansions (See appendix ???).The calculated voltage distributions are shown in figure 5.Note that at the distance of even our nearest recording electrodes relative to the stimulation electrodes, they all look like point sources. Asymptotically (beyond one cm) all of the curves decay in a matter similar $1/r$, with the precise fall off depending on the particulars of problem geometry. Physically, this is because the electrode looks like a point once you are far enough away from it. This explains why the point source model fits our data so well.
-
-For point electrodes on the surface of a half space with uniform resistivity, the voltage everywhere on and inside the sample is given by:
-
-$$V(r) = \bigg( {\rho \; i_0  \over 2 \pi} \bigg) \ {1\over r}$$
-
-\noindent where $i_0$ is the current that is injected at the electrode and removed at infinity, $\rho$ is the resistivity of the half space, and $r$ 
-is the distance between the current source and the point where the voltage is measured. This is the voltage measured relative to infinity which is defined to be at zero potential.
-
-For a pair of constant current point electrodes on the surface of a half space with uniform resistivity, the voltage everywhere on the surface is given by superposition
-
-$$V(r) = \bigg( {\rho \; i_0  \over 2 \pi} \bigg) \ \bigg[ {1\over r_+} -  {1\over r_-} \bigg]$$
-
-\noindent here $r_+$ is the distance between the positive current source and the point where the voltage is measured, and
-$r_-$ is the distance between the negative current source and the point where the voltage is measured. Again this voltage is measured relative to infinity. We use this equation to analyze our data. For point electrodes on the surface of a half space with uniform resistivity, the apparent resistivity $\rho_a$ is equal to the true resistivity $\rho$. For multilayer systems, the apparent resistivity $\rho_a$ is not equal to the true resistivity $\rho$. This is used to obtain information about the
-resistivity of the layers.
-
-\subsection{Two-point measurements and electrode resistance}
-
-For a constant-voltage ohmic electrode on the surface of half-space of uniform resistivity material (with infinity held at zero potential), the steady-state voltage and current are related by Ohm’ss law $V=IR$ and the electrode resistance is defined to be $R=V/I$. For circular electrodes with radius $a$, the resistance is related to the resistivity of the material by $R=(rho/4a)$. For two identical well separated electrodes, the resistance between them is twice that for a single electrode $R_2=(rho/2a)$. These equations are routinely used to measure the resistivity of bulk semiconductors.
-
-However, because of the capacitance of metallic electrodes on the surface of the brain, the above relation does not apply under steady state conditions due to the time-dependent charging of the double-layer capacitance. However, it does apply under constant current pulse conditions before the electrodes start to charge. {ref 1} The measured time-dependent applied voltages that were used to produce constant current stimulation are shown in Figure 1. We determined the electrode resistances by extracting the voltage jump at the onset of the stimulation and dividing it by the applied current \cite{Huang2008a}.
-
-What happens as the two electrodes are brought together? Do the resistances still add? It turns out that in general they do not. This is because superposition does not apply to closely spaced constant voltage electrodes. The analytic solution to Laplace’s equation for multiple constant voltage electrodes on the surface of a half-space of uniform resistivity material is extremely complicated. The boundary conditions are mixed: constant voltage boundary conditions apply under the two electrodes and constant normal derivative (zero current) boundary conditions apply everywhere else on the surface. Consequently, in modern times these  problems are usually solved numerically (typically using FEM or BEM methods). However in 1939, Kobayashi solved the problem analytically for the special  case of two circular constant voltage electrodes. \cite{Kobayashi1939}. Kobayashi’s exact solution for the resistance between a pair of circular constant voltage electrodes separated by a center-to-center distance $d$ that is large compared to their radius $a$ can be well approximated by \cite{Kristiansson2005}.
-
-$$R = \bigg[1 - \bigg({2\over \pi} \bigg) \arcsin(a/d) \bigg]  {\rho \over 2a}  = A \ {\rho \over 2a}$$
-
-For adjacent electrodes in our clinical ECoG grids $d/a =10/1.15 \approx 8.7$ and the electrode resistance given by equation 1 agrees with Kobayashi’s exact  solution to $< 0.1\%$. The correction factors $A$ are given by $A=0.9266$ for $d=1$ cm; $A=0.9756$ for $d=3$ cm; and $A=0.985$ for $d=5$ cm. 
-
-We calculated the apparent resistivity values for each subject using our measured electrode resistances by solving equation 1 for $\rho$
-
-$$\rho = {2 a R \over A} $$
-
-
 
 %Electrode Capacitance
 %
@@ -193,8 +230,6 @@ $$\rho = {2 a R \over A} $$
 %$$C= 0.75 \; microfarads$$
 %
 %For 500 microamps, the measured voltage increase after the initial voltage jump is not linear in time. This is due to the electrochemistry. Platinum is being reduced at the cathode and oxidized at the anode. This produces the curvature in the waveform.
-
-
 
 \section{Experimental results for the statics and dynamics of ECoG electrodes}
 
@@ -234,28 +269,32 @@ In order to extract the two-point resistivity as described above, we first have 
 	\label{fig:mrStimSchem}
 \end{figure}s
 
-The time dependence of the voltage curves is shown in Figure \ref{fig:concatjumpvoltages}. It is clear from these plots that there is a non-linear relationship between each individual trial and jump voltage, suggesting that two-point measurements in our stimulation setup are noisy. 
+The time dependence of the voltage curves is shown in Figure \ref{fig:jumpvoltages}. It is clear from these plots that there is a non-linear relationship between each individual trial and jump voltage, suggesting that two-point measurements in our stimulation setup are noisy. 
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.95\linewidth]{figures/macroscopicResistivity/concatJumpVoltages}
-	\caption[Jump voltages over time all subjects]{The initial jump voltages for all subjects are concatenated to illustrate the time dependence and non-linearities}
-	\label{fig:concatjumpvoltages}
+	\includegraphics[width=0.95\linewidth]{figures/macroscopicResistivity/JumpVoltages}
+	\caption[Jump voltages over time all subjects]{The initial jump voltages for all subjects to illustrate the time dependence and non-linearities}
+	\label{fig:jumpvoltages}
 \end{figure}
 
 
-The same data is shown again normalized by dividing by the stimulation current in figure 9. In this form the data has units of ohms and is the dynamic impedance of the sample in response to our applied stimulation. Properly engineered stimulators must be able to drive these dynamic impedances. We determined the electrode resistances by extracting the voltage jump at the onset of the stimulation and dividing it by the applied current.
+The same data is shown again normalized by dividing by the stimulation current in figure \ref{fig:twoPointFigures}. In this form the data has units of ohms and is the dynamic impedance of the sample in response to our applied stimulation. Properly engineered stimulators must be able to drive these dynamic impedances. We determined the electrode resistances by extracting the voltage jump at the onset of the stimulation and dividing it by the applied current.
 This gives us total resistance for each subject.
 
-The values are shown in Table ??? .
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.95\linewidth]{figures/macroscopicResistivity/twoPointFigures}
+	\caption[Two-point results]{The mean voltage (+/- standard deviation) is plotted for each subject. This is subsequently divided by the applied current, and appropriately converted into resistivity values}
+	\label{fig:twoPointFigures}
+\end{figure}
+
+The values are shown in Table ??? (Should we do one table with all of the resistivity values?) .
 
 \section{Flat vs. Spherical Models}
 The brain can be considered to be a spherical object, but on the scale of an array of ECoG electrodes, what is the local topography? We visualize our reconstructed electrode grids, and calculate curvatures. We demonstrate that the electrode array can locally be flat, or in other places well represented by a sphere. Motivated by this, we consider both analytic flat and spherical apparent resistivity models. 
 
-\section{Four point-electrode measurements of the apparent resistivity}
-
-When we made our measurements, we had a distant reference electrode. We measured the voltages on the recording electrodes relative to this reference electrodes.
-In this section, we present some examples of global fits to the three-electrode data. The idea is to use linear least square fits to determine the global apparent resistivity that produces the best fit.
+FIGURE ABOUT CURVATURE
 
 \subsection{Voltage over time}
 To assess the time dependent factor of resistivity in the brain, we calculated the average voltage during the first phase of stimulation for each individual trial for every channel, and plotted this as a function of time (Figure \ref{fig:mrVoltageOverTime}). As shown, the resistivity of the brain over time stays relatively constant with no systematic variation, indicating that averaging across measurements is appropriate. 
@@ -267,32 +306,26 @@ To assess the time dependent factor of resistivity in the brain, we calculated t
 	\label{fig:mrVoltageOverTime}
 \end{figure}
 
-\subsection{Flat theory}
+\subsection{Saline Phantom Validation}
 
-The corresponding three-electrode apparent resistivity values were obtained from the three-electrode voltage measurements by fitting the measured voltages to the theoretical predictions for an apparent resistivity of one ohm-m. Then the slope of the best fit line is equal to the apparent resistivity. This assumes that the voltage on the reference electrode is essentially equal to zero. Figure 11 shows the linear fit for each subject.
+Using our same data extraction and analysis strategy as outlined in the methods, we compared our results with ECoG grids to a commercial conductivity meter using a sodium chloride saline phantom model to serve as validation. We created two solutions of 0.511 and 3.44 ohm-m NaCl solutions. By using the TDT, we determined the solution resistivities to be 0.514 ohm-m and 3.44 ohm-m respectively (Figure \ref{fig:mrSalineValidation})
 
-The quality of the fits is shown in figure 12 which compares the fit for each subject with the corresponding data versus the electrode number.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.95\linewidth]{figures/macroscopicResistivity/salineValidation}
+	\caption[Saline Validation]{The initial jump voltages for all subjects are concatenated to illustrate the time dependence and non-linearities}
+	\label{fig:mrSalineValidation}
+\end{figure}
 
 
-\subsection{Saline phantom validation of three-electrode measurements}
+\section{Four-electrode measurements - flat model}
 
-Using our same data extraction and analysis strategy as outlined in the methods, we compared our results with ECoG grids to a commercial conductivity meter using a sodium chloride saline phantom model to serve as validation. 
+There are many (62 choose 2=1891) choices for the recording electrode pairs, and subsequently the following histograms have these number of calculated values.
 
-We created two solutions of 0.511 and 3.43 ohm-m NaCl solutions. By using the TDT, we determined the solution resistivities to be 0.514 ohm-m and 3.44 ohm-m respsectively (Supplemental figure ???). 
+%Figure 13 shows the 4-point histograms.
+%Two of the four electrodes are stimulation electrodes and two are recording electrodes. Our subjects had 64 electrode ECoG grids. So there are many (62 choose 2=1891) choices for the recording electrode pairs The eighth histogram in figure 13 is the sum of the seven individual histograms. Note that the path of the current flow that produces the recorded voltages is different for every pair of recording electrodes.
 
-\subsection{Spherical Theory}
-
-\section{Four-electrode measurements of the apparent resistivity}
-
-The four-electrode method is the gold standard for making resistivity measurements \cite{Miccoli2015}
-
-It's main advantage is that it is insensitive to inevitable variations in the contacts. For example, since our surfaces are not flat, the effective contact area can be smaller than the actual area of the
-contact. When this happens or the region under the contact is inhomogeneous, the contact resistivity will not be equal to $2aR$. However, by using constant current stimulation and measuring away from the stimulation electrodes, the voltages on the recording electrodes will be correct. They do not depend on the contact area. This is why the point electrode model works for our measurements.
-
-We don't need to assume that the voltage on the reference electrode is equal to zero. We can eliminate it by computing difference between the voltages on pairs of recording electrodes. The apparent resistivity for each pair is equal to the ratio of the difference between the measured voltage divided by the difference between the theoretically predicted values. In this case there is no fitting. Note that each of these apparent resistivity values corresponds to a different current path through the sample.
-
-Figure 13 shows the 4-point histograms.
-Two of the four electrodes are stimulation electrodes and two are recording electrodes. Our subjects had 64 electrode ECoG grids. So there are many (62 choose 2=1891) choices for the recording electrode pairs The eighth histogram in figure 13 is the sum of the seven individual histograms. Note that the path of the current flow that produces the recorded voltages is different for every pair of recording electrodes.
+\section{Four-electrode measurements - spherical theory}
 
 \section{Discussion}
 
@@ -304,39 +337,39 @@ electrode behavior are in their asymptotic $1/r$ regime.
 
 As shown in the section on 2-point measurements, the voltage exhibits non-linear drifts over time, which affects. The recorded voltages on the recording electrodes are more uniform, illustrating the benefits of the 3 and 4-point techniques over the 2-point technique when possible. 
 
-Figure 14 shows false color plots of the measured V/I values. 
-These plots show the spatial structure of the surface voltage distributions well, but do not show the actual values quantitatively.
-Linear plots versus the electrode number display the values quantitatively, but do not display the spatial structure well. 
-Figures 15 and 16 show linear plots of V/I parallel and perpendicular to the stimulation dipole axis.
-
-These plots clearly show the range of the apparent resistivity values for these subjects. 
-These plots also show the relative contributions to the average curve of V/I values.
-
-
-In geoelectric prospecting and semiconductor characterization, the resistivity versus depth is determined by making measurements as the recording electrode spacing is increased [???].
-Larger recording electrode separations probe deeper. This motivated us to extract the apparent resistivity versus electrode separation. 
-
-We divided the electrode separations into bins. Each bin was 1 cm wide. The centers of the bins were at 1.5, 2.5, 3.5, 4.5, and 5.5 cm. We then fit all of the electrodes within each bin
-to determine the apparent resistivity. The distance dependence of the apparent resistivity is shown in figure 17.
-
-Note that the apparent resistivity values tend to increase as the recording electrode separation increases. This is the expected behavior if the resistivity of the white matter is larger than that of the gray matter because larger recording electrode separations include larger contributions from the white matter.
-
-White matter tracts in humans demonstrate complex morphologies, and depending on the orientation, have different resistivity values []. We expect that as we increase the electrode separation, there are contributions from both parallel (lower/equal resistivity to gray matter), and perpendicular white matter (higher resistivity than gray matter) tracts, which in aggregate results in an increased resistivity at greater depths.
-
-To see if we could reduce the effects of the anatomy, we aligned the locations of the stimulation electrodes to create an average brain. 
-Figure 14 shows the spatial distributions of the measured responses to stimulation. The measurements are shown in ohms, the measured voltages 
-have been divided by the stimulation current for each subject.
-
-If all of the brains were lamellar, all of the spatial distributions would look the same. There are clear differences in the spatial distributions. 
-To see if we could reduce these differences, we first averaged over the subjects. This reduced but did not eliminate the differences. 
-To reduce the differences further, we used the symmetry expected for the distributions. They should be left-right symmetric and up-down antisymmetric. 
-Figures 18 and 19 show the result of averaging and symmetrizing.
-
-The next step is to see how well the dependence of the apparent resistivity on the separation of the recording electrodes can be determined from the averaged and symmetrized values. 
-This is shown in figures 20 and 21.
-
-From the fit, the apparent resistivity vs the distance from the center of the stimulation dipole is given in ohm-m by 2.24 + 0.41*(distance in cm). 
-It ranges from 3 ohm-m at a distance of 2 cm to 5 ohm-m at a distance of 7 cm.
+%Figure 14 shows false color plots of the measured V/I values. 
+%These plots show the spatial structure of the surface voltage distributions well, but do not show the actual values quantitatively.
+%Linear plots versus the electrode number display the values quantitatively, but do not display the spatial structure well. 
+%Figures 15 and 16 show linear plots of V/I parallel and perpendicular to the stimulation dipole axis.
+%
+%These plots clearly show the range of the apparent resistivity values for these subjects. 
+%These plots also show the relative contributions to the average curve of V/I values.
+%
+%
+%In geoelectric prospecting and semiconductor characterization, the resistivity versus depth is determined by making measurements as the recording electrode spacing is increased [???].
+%Larger recording electrode separations probe deeper. This motivated us to extract the apparent resistivity versus electrode separation. 
+%
+%We divided the electrode separations into bins. Each bin was 1 cm wide. The centers of the bins were at 1.5, 2.5, 3.5, 4.5, and 5.5 cm. We then fit all of the electrodes within each bin
+%to determine the apparent resistivity. The distance dependence of the apparent resistivity is shown in figure 17.
+%
+%Note that the apparent resistivity values tend to increase as the recording electrode separation increases. This is the expected behavior if the resistivity of the white matter is larger than that of the gray matter because larger recording electrode separations include larger contributions from the white matter.
+%
+%White matter tracts in humans demonstrate complex morphologies, and depending on the orientation, have different resistivity values []. We expect that as we increase the electrode separation, there are contributions from both parallel (lower/equal resistivity to gray matter), and perpendicular white matter (higher resistivity than gray matter) tracts, which in aggregate results in an increased resistivity at greater depths.
+%
+%To see if we could reduce the effects of the anatomy, we aligned the locations of the stimulation electrodes to create an average brain. 
+%Figure 14 shows the spatial distributions of the measured responses to stimulation. The measurements are shown in ohms, the measured voltages 
+%have been divided by the stimulation current for each subject.
+%
+%If all of the brains were lamellar, all of the spatial distributions would look the same. There are clear differences in the spatial distributions. 
+%To see if we could reduce these differences, we first averaged over the subjects. This reduced but did not eliminate the differences. 
+%To reduce the differences further, we used the symmetry expected for the distributions. They should be left-right symmetric and up-down antisymmetric. 
+%Figures 18 and 19 show the result of averaging and symmetrizing.
+%
+%The next step is to see how well the dependence of the apparent resistivity on the separation of the recording electrodes can be determined from the averaged and symmetrized values. 
+%This is shown in figures 20 and 21.
+%
+%From the fit, the apparent resistivity vs the distance from the center of the stimulation dipole is given in ohm-m by 2.24 + 0.41*(distance in cm). 
+%It ranges from 3 ohm-m at a distance of 2 cm to 5 ohm-m at a distance of 7 cm.
 
 \section{Future Directions}
 
