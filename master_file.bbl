@@ -1,86 +1,119 @@
 \begin{thebibliography}{10}
 
-\bibitem{Borchers2012}
-Svenja Borchers, Marc Himmelbach, Nikos Logothetis, and Hans-Otto Karnath.
-\newblock {Direct electrical stimulation of human cortex - the gold standard
-  for mapping brain functions?}
-\newblock {\em Nature reviews. Neuroscience}, 13(1):63--70, 2012.
+\bibitem{Al-ani2011}
+Tarik Al-ani, Fanny Cazettes, St{\'{e}}phane Palfi, and Jean~Pascal Lefaucheur.
+\newblock {Automatic removal of high-amplitude stimulus artefact from neuronal
+  signal recorded in the subthalamic nucleus}.
+\newblock {\em Journal of Neuroscience Methods}, 198(1):135--146, 2011.
 
-\bibitem{Collins2016}
-Kelly~L Collins, Arvid Guterstam, Jeneva Cronin, Jared~D Olson, H~Henrik
-  Ehrsson, and Jeffrey~G Ojemann.
-\newblock {Ownership of an artificial limb induced by electrical brain
-  stimulation}.
-\newblock {\em Proceedings of the National Academy of Sciences},
-  114(1):166--171, jan 2017.
+\bibitem{Erez2010}
+Yaara Erez, Hadass Tischler, Anan Moran, and Izhar Bar-Gad.
+\newblock {Generalized framework for stimulus artifact removal}.
+\newblock {\em Journal of Neuroscience Methods}, 191(1):45--59, 2010.
 
-\bibitem{Cronin2016a}
-Jeneva~A. Cronin, Jing Wu, Kelly~L. Collins, Devapratim Sarma, Rajesh P.~N.
-  Rao, Jeffrey~G. Ojemann, and Jared~D. Olson.
-\newblock {Task-Specific Somatosensory Feedback via Cortical Stimulation in
-  Humans}.
-\newblock {\em IEEE Transactions on Haptics}, 1412(c), 2016.
+\bibitem{Ester:1996:DAD:3001460.3001507}
+Martin Ester, Hans-Peter Kriegel, J{\"{o}}rg Sander, and Xiaowei Xu.
+\newblock {A Density-based Algorithm for Discovering Clusters a Density-based
+  Algorithm for Discovering Clusters in Large Spatial Databases with Noise}.
+\newblock In {\em Proceedings of the Second International Conference on
+  Knowledge Discovery and Data Mining}, volume~70 of {\em KDD'96}, pages
+  156--7. Elsevier, mar 1996.
 
-\bibitem{Dadarlat2015}
-Maria~C Dadarlat, Joseph~E O'Doherty, and Philip~N Sabes.
-\newblock {A learning-based approach to artificial sensory feedback leads to
-  optimal integration}.
-\newblock {\em Nature Neuroscience}, 18(1):138--144, jan 2015.
+\bibitem{Gilley2006}
+Phillip~M. Gilley, Anu Sharma, Michael Dorman, Charles~C. Finley,
+  Arunachalam~S. Panch, and Kathryn Martin.
+\newblock {Minimization of cochlear implant stimulus artifact in cortical
+  auditory evoked potentials}.
+\newblock {\em Clinical Neurophysiology}, 117(8):1772--1782, 2006.
 
-\bibitem{Wilson1950}
-Wilson F.N and Bayley R.H.
-\newblock {The electric field of an eccentric dipole in a homogeneous spherical
-  conducting medium.}
-\newblock {\em Circulation}, 1(1):84--92, 1950.
+\bibitem{Hashimoto2002}
+Takao Hashimoto, Christopher~M. Elder, and Jerrold~L. Vitek.
+\newblock {A template subtraction method for stimulus artifact removal in
+  high-frequency deep brain stimulation}.
+\newblock {\em Journal of Neuroscience Methods}, 113(2):181--186, 2002.
 
-\bibitem{Frank1952}
-Ernest Frank.
-\newblock {Electric Potential Produced by Two Point Current Sources in a
-  Homogenous Conducting Sphere}.
-\newblock {\em Journal of Applied Physics}, 102(1927), 1952.
+\bibitem{Herring2015}
+Jim~D Herring, Gregor Thut, Ole Jensen, and Til~O Bergmann.
+\newblock {Attention Modulates TMS-Locked Alpha Oscillations in the Visual
+  Cortex}.
+\newblock {\em Journal of Neuroscience}, 35(43):14435--14447, oct 2015.
 
-\bibitem{Huang2008a}
-Mark Huang, Richard~L. Harvey, Mary {Ellen Stoykov}, Sean Ruland, Martin
-  Weinand, David Lowry, and Robert Levy.
-\newblock {Cortical Stimulation for Upper Limb Recovery Following Ischemic
-  Stroke: A Small Phase II Pilot Study of a Fully Implanted Stimulator}.
-\newblock {\em Topics in Stroke Rehabilitation}, 15(2):160--172, 2008.
+\bibitem{Lu2012}
+Yiliang Lu, Pengjia Cao, Jingjing Sun, Jing Wang, Liming Li, Qiushi Ren, Yao
+  Chen, and Xinyu Chai.
+\newblock {Using independent component analysis to remove artifacts in visual
+  cortex responses elicited by electrical stimulation of the optic nerve}.
+\newblock {\em Journal of Neural Engineering}, 9(2), 2012.
 
-\bibitem{Klaes2014}
-Christian Klaes, Ying Shi, Spencer Kellis, Juri Minxha, Boris Revechkis, and
-  Richard~A. Andersen.
-\newblock {A cognitive neuroprosthetic that uses cortical stimulation for
-  somatosensory feedback}.
-\newblock {\em Journal of Neural Engineering}, 11(5):056024, oct 2014.
+\bibitem{Matsumoto2004b}
+Riki Matsumoto, Dileep~R Nair, Eric LaPresto, Imad Najm, William Bingaman,
+  Hiroshi Shibasaki, and Hans~O L{\"{u}}ders.
+\newblock {Functional connectivity in the human language system: a
+  cortico-cortical evoked potential study.}
+\newblock {\em Brain : a journal of neurology}, 127(Pt 10):2316--30, oct 2004.
 
-\bibitem{Kristiansson2005}
-Simon Kristiansson, Shiva~P. Kagganti, Fredrik Ingvarson, and Kjell~O. Jeppson.
-\newblock {A comparison of the exact and an approximate solution for the
-  resistance between two coplanar circular discs}.
-\newblock {\em Solid-State Electronics}, 49(2):275--277, feb 2005.
+\bibitem{Mena2017}
+Gonzalo~E Mena, Lauren~E Grosberg, Sasidhar Madugula, Pawe{\l} Hottowy, Alan
+  Litke, John Cunningham, E~J Chichilnisky, and Liam Paninski.
+\newblock {Electrical stimulus artifact cancellation and neural spike detection
+  on large multi-electrode arrays}.
+\newblock {\em PLOS Computational Biology}, 13(11):e1005842, nov 2017.
 
-\bibitem{Miccoli2015}
-I.~Miccoli, F.~Edler, H.~Pfn{\"{u}}r, and C.~Tegenkamp.
-\newblock {The 100th anniversary of the four-point probe technique: The role of
-  probe geometries in isotropic and anisotropic systems}.
-\newblock {\em Journal of Physics Condensed Matter}, 27(22), 2015.
+\bibitem{Mouthaan2016}
+B.~E. Mouthaan, M.~A. {Van't Klooster}, D.~Keizer, G.~J. Hebbink, F.~S~S
+  Leijten, C.~H. Ferrier, M.~J A~M {Van Putten}, M.~Zijlmans, and G.~J~M
+  Huiskamp.
+\newblock {Single Pulse Electrical Stimulation to identify epileptogenic
+  cortex: Clinical information obtained from early evoked responses}.
+\newblock {\em Clinical Neurophysiology}, 127(2):1088--1098, 2016.
 
-\bibitem{Miceli2017}
-St{\'{e}}phanie Miceli, Torbj{\o}rn~V. Ness, Gaute~T. Einevoll, and Dirk
-  Schubert.
-\newblock {Impedance Spectrum in Cortical Tissue: Implications for Propagation
-  of LFP Signals on the Microscopic Level}.
-\newblock {\em Eneuro}, 4(1):ENEURO.0291--16.2016, 2017.
+\bibitem{Muller2017}
+Leah Muller, John~D. Rolston, Neal~P. Fox, Robert Knowlton, Vikram~R. Rao, and
+  Edward~F. Chang.
+\newblock {Direct electrical stimulation of human cortex evokes high gamma
+  activity that predicts conscious somatosensory perception}.
+\newblock {\em Journal of Neural Engineering}, In Press:1--21, 2017.
 
-\bibitem{Penfield1937}
-Wilder Penfield and Edwin Boldrey.
-\newblock {Somatic motor and sensory representation in the cerebral cortex of
-  man as studied by electrical stimulation}.
-\newblock {\em Brain}, 60(4):389--443, 1937.
+\bibitem{Nagel2000}
+J.~H Nagel.
+\newblock {“Biopotential Amplifiers.”}.
+\newblock In {\em The Biomedical Engineering Handbook: Second Edition}. 2000.
 
-\bibitem{W.M.TelfordL.PGeldart1990}
-R.E.~Sheriff {W.M. Telford, L.P Geldart}.
-\newblock {\em {Applied Geophysics}}.
-\newblock jan 1990.
+\bibitem{OShea2017}
+Daniel~J. O'Shea and Krishna~V. Shenoy.
+\newblock {ERAASR: An algorithm for removing electrical stimulation artifacts
+  from multielectrode array recordings}.
+\newblock {\em bioRxiv}, pages 1--27, 2017.
+
+\bibitem{Teh2010}
+Yee~Whye Teh.
+\newblock {Dirichlet Process}.
+\newblock {\em Encyclopedia of Machine Learning}, pages 280--287, 2010.
+
+\bibitem{Teh2006}
+Yee~Whye Teh, Michael~I. Jordan, Matthew~J. Beal, and David~M. Blei.
+\newblock {Hierarchical Dirichlet processes}.
+\newblock {\em Journal of the American Statistical Association},
+  101(476):1566--1581, 2006.
+
+\bibitem{Trebaul2016}
+Lena Trebaul, David Rudrauf, Anne~Sophie Job, Mihai~Dragos Măl{\^{i}}ia, Irina
+  Popa, Andrei Barborica, Lorella Minotti, Ioana M{\^{i}}ndruţă, Philippe
+  Kahane, and Olivier David.
+\newblock {Stimulation artifact correction method for estimation of early
+  cortico-cortical evoked potentials}.
+\newblock {\em Journal of Neuroscience Methods}, 264:94--102, 2016.
+
+\bibitem{Wagenaar2002}
+Daniel~A. Wagenaar and Steve~M. Potter.
+\newblock {Real-time multi-channel stimulus artifact suppression by local curve
+  fitting}.
+\newblock {\em Journal of Neuroscience Methods}, 120(2):113--120, 2002.
+
+\bibitem{Zhou2018}
+Andy Zhou, Benjamin~C Johnson, and Rikky Muller.
+\newblock {Toward true closed-loop neuromodulation: artifact-free recording
+  during stimulation}.
+\newblock {\em Current Opinion in Neurobiology}, 50:119--127, 2018.
 
 \end{thebibliography}

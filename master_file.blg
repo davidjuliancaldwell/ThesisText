@@ -1,7 +1,7 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: master_file.aux
-A level-1 auxiliary file: macroscopicResistivity.aux
+A level-1 auxiliary file: artifactRejection.aux
 The style file: plain.bst
 Database file #1: bibliography/Thesis.bib
-Warning--I didn't find a database entry for "fig:mrSalineValidation"
-Warning--empty publisher in W.M.TelfordL.PGeldart1990
+Warning--can't use both volume and number fields in Ester:1996:DAD:3001460.3001507
+Warning--empty publisher in Nagel2000
 (There were 2 warnings)
